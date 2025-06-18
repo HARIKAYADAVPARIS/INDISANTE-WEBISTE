@@ -1,73 +1,306 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IndiSanté - Healthcare Sans Borders</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndiSanté - Healthcare Sans Borders</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles to ensure Inter font is applied and provide a base */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light gray background */
+            color: #334155; /* Darker gray for text */
+        }
+        /* Style for the waitlist form */
+        #waitlist-form input[type="email"],
+        #waitlist-form input[type="text"] {
+            @apply px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent w-full transition-all duration-300;
+        }
+        #waitlist-form button {
+            @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-colors duration-300 w-full;
+        }
+        /* Custom gradient for key sections */
+        .gradient-bg {
+            background-image: linear-gradient(to bottom right, #f0f9ff, #e0f2fe);
+        }
+    </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="antialiased">
 
-<!-- Hero Section -->
-<section class="bg-gradient-to-br from-blue-100 to-orange-100 p-10 text-center">
-  <h1 class="text-4xl font-bold mb-2">IndiSanté</h1>
-  <p class="text-xl italic text-gray-700 mb-4">Healthcare Sans Borders</p>
-  <p class="text-lg max-w-2xl mx-auto">Bridging healthcare access for Indian students and migrants in Europe — starting with France and India.</p>
-</section>
+    <!-- Header / Navigation Bar -->
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <!-- IndiSanté Logo/Name -->
+                <a href="#" class="text-2xl font-bold text-blue-800">IndiSanté</a>
+                <!-- Optional: A small, culturally relevant icon or globe emoji -->
+                <span class="text-xl">🌍</span>
+            </div>
+            <nav>
+                <ul class="flex space-x-6 text-gray-700 font-medium">
+                    <li><a href="#problem" class="hover:text-blue-600 transition-colors">Problem</a></li>
+                    <li><a href="#solution" class="hover:text-blue-600 transition-colors">Solution</a></li>
+                    <li><a href="#who-we-serve" class="hover:text-blue-600 transition-colors">Who We Serve</a></li>
+                    <li><a href="#team" class="hover:text-blue-600 transition-colors">Team</a></li>
+                    <li><a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<!-- Visual Mockups Section -->
-<section class="p-10 bg-gray-50 text-center">
-  <h2 class="text-2xl font-semibold mb-4">Product Preview</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-center max-w-6xl mx-auto">
-    <div>
-      <img src="mockup_whatsapp.png" alt="WhatsApp Triage Mockup" class="rounded-lg shadow-md w-full">
-      <p class="mt-2 text-sm">AI Triage Assistant via WhatsApp</p>
-    </div>
-    <div>
-      <img src="mockup_booking.png" alt="Booking UI Mockup" class="rounded-lg shadow-md w-full">
-      <p class="mt-2 text-sm">Cross-Border Doctor Booking Flow</p>
-    </div>
-  </div>
-</section>
+    <!-- Hero Section -->
+    <section class="gradient-bg py-20 text-center relative overflow-hidden rounded-b-3xl shadow-xl">
+        <div class="container mx-auto px-4 relative z-10">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-blue-900 leading-tight mb-6 animate-fade-in-up">
+                Healthcare Without Borders: <br class="hidden md:inline"> Seamless Care for Indians in Europe
+            </h1>
+            <h3 class="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto animate-fade-in">
+                Bridging language, culture, and access gaps with AI-powered telemedicine and culturally-sensitive support.
+            </h3>
+            <!-- Primary Call to Action -->
+            <a href="#waitlist-form" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 animate-bounce-in">
+                Join Our Exclusive Waitlist
+            </a>
+            <p class="text-sm text-gray-600 mt-4">Be among the first to experience healthcare designed for you.</p>
+        </div>
+    </section>
 
-<!-- Micro-Segments Section -->
-<section class="p-10 bg-white text-center">
-  <h2 class="text-2xl font-semibold mb-4">Who We Serve</h2>
-  <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-    <div class="bg-blue-50 p-4 rounded-lg shadow">
-      <h3 class="font-bold text-lg mb-2">Indian Students</h3>
-      <p class="text-sm">Struggling with access, language, and awareness.</p>
-      <p class="mt-2 text-xs text-gray-600">We offer simplified digital access and support.</p>
-    </div>
-    <div class="bg-green-50 p-4 rounded-lg shadow">
-      <h3 class="font-bold text-lg mb-2">Mid-Level Professionals</h3>
-      <p class="text-sm">Need trusted doctors for themselves & family in India.</p>
-      <p class="mt-2 text-xs text-gray-600">We enable remote consults with Indian GPs.</p>
-    </div>
-    <div class="bg-orange-50 p-4 rounded-lg shadow">
-      <h3 class="font-bold text-lg mb-2">Migrant Mothers</h3>
-      <p class="text-sm">Need pediatric, mental health, and native-language support.</p>
-      <p class="mt-2 text-xs text-gray-600">We guide them through family healthcare with dignity.</p>
-    </div>
-  </div>
-</section>
+    <!-- Problem Section -->
+    <section id="problem" class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-blue-800 mb-8">The Challenge: Navigating Healthcare Abroad</h2>
+            <p class="text-lg text-gray-700 max-w-4xl mx-auto mb-12">
+                For Indian students and migrants in Europe, accessing quality healthcare is often fraught with significant obstacles. Language barriers, cultural differences, and unfamiliar medical systems can lead to delayed care, misdiagnoses, and immense stress.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="p-6 bg-red-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-red-700 mb-3">Language Barriers</h3>
+                    <p class="text-gray-700">Difficulty communicating symptoms and understanding medical advice, leading to frustration and potential errors.</p>
+                </div>
+                <div class="p-6 bg-yellow-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-yellow-700 mb-3">Cultural Misunderstandings</h3>
+                    <p class="text-gray-700">Lack of culturally sensitive care and differing expectations about medical practices.</p>
+                </div>
+                <div class="p-6 bg-green-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-green-700 mb-3">Complex Systems</h3>
+                    <p class="text-gray-700">Navigating appointments, insurance, and local regulations in a new country can be overwhelming.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Compliance Bar Section -->
-<section class="bg-gray-100 py-6">
-  <div class="max-w-5xl mx-auto text-center grid grid-cols-1 md:grid-cols-3 gap-4">
-    <div>✅ GDPR-ready</div>
-    <div>✅ Cross-border healthcare compliance</div>
-    <div>✅ Built for India–France regulation sync</div>
-  </div>
-</section>
+    <!-- Solution & How It Works Section -->
+    <section id="solution" class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-blue-800 mb-8">Our Solution: Intelligent & Empathetic Healthcare</h2>
+            <p class="text-lg text-gray-700 max-w-4xl mx-auto mb-12">
+                IndiSanté leverages cutting-edge AI and a network of trusted medical professionals to provide seamless, culturally-aware healthcare access.
+            </p>
 
-<!-- Contact Section -->
-<section class="bg-blue-50 p-10 text-center">
-  <h2 class="text-2xl font-semibold mb-4">Get in Touch</h2>
-  <p>Email us at <a href="mailto:contact@indisante.com" class="text-blue-700 underline">contact@indisante.com</a></p>
-  <p class="mt-2">Or join our waitlist to get early access.</p>
-</section>
+            <!-- How It Works - 3 Step Flow -->
+            <h3 class="text-3xl font-bold text-blue-700 mb-8 mt-12">How It Works: Simple Steps to Your Well-being</h3>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-3xl font-bold mb-4">1</div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Smart Triage & Language Support</h4>
+                    <p class="text-gray-700 text-center">Start with our AI assistant via WhatsApp for initial symptom checks and instant translation in your preferred language.</p>
+                    <img src="https://placehold.co/300x200/edf2f7/4a5568?text=WhatsApp+Triage+Mockup" alt="WhatsApp Triage UI Mockup" class="w-full h-auto mt-4 rounded-md shadow-sm">
+                    <p class="text-sm text-gray-500 mt-2">Example of AI Assistant Interface</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-3xl font-bold mb-4">2</div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Book Your Consultation</h4>
+                    <p class="text-gray-700 text-center">Easily find and book appointments with pre-vetted doctors, optimized for cross-border care and cultural understanding.</p>
+                    <img src="https://placehold.co/300x200/edf2f7/4a5568?text=Booking+UI+Mockup" alt="Booking UI Mockup" class="w-full h-auto mt-4 rounded-md shadow-sm">
+                    <p class="text-sm text-gray-500 mt-2">Example of Booking Interface</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-3xl font-bold mb-4">3</div>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Receive Seamless Care</h4>
+                    <p class="text-gray-700 text-center">Engage in video consultations with real-time translation and cultural context notes, ensuring clear communication.</p>
+                    <img src="https://placehold.co/300x200/edf2f7/4a5568?text=Consultation+UI+Mockup" alt="Consultation UI Mockup" class="w-full h-auto mt-4 rounded-md shadow-sm">
+                    <p class="text-sm text-gray-500 mt-2">Example of Video Consultation with AI overlay</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Who We Serve Section - Enhanced Details -->
+    <section id="who-we-serve" class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-blue-800 mb-8">Who We Serve: Tailored Care for Every Need</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="p-8 bg-blue-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <span class="text-5xl mb-4">🎓</span> <!-- Emoji for icon -->
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-3">Indian Students</h3>
+                    <p class="text-gray-700 text-center mb-4">
+                        Struggling with language, unfamiliar healthcare systems, and seeking culturally appropriate support while studying abroad. We offer simplified digital access and essential guidance.
+                    </p>
+                </div>
+                <div class="p-8 bg-green-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <span class="text-5xl mb-4">👨‍👩‍👧‍👦</span> <!-- Emoji for icon -->
+                    <h3 class="text-2xl font-semibold text-green-700 mb-3">Mid-Level Professionals & Families</h3>
+                    <p class="text-gray-700 text-center mb-4">
+                        Need trusted, convenient doctors for themselves and their families in Europe or India. We enable remote consults with Indian GPs for familiar care, and provide support for local European specialists.
+                    </p>
+                </div>
+                <div class="p-8 bg-purple-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <span class="text-5xl mb-4">🤰</span> <!-- Emoji for icon -->
+                    <h3 class="text-2xl font-semibold text-purple-700 mb-3">Migrant Mothers</h3>
+                    <p class="text-gray-700 text-center mb-4">
+                        Need pediatric, mental health, and native-language support for their children, or for their own well-being. We guide them through complex family healthcare with dignity and understanding.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Compliance Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-blue-800 mb-8">Our Commitment: Trust, Privacy, Compliance</h2>
+            <p class="text-lg text-gray-700 max-w-4xl mx-auto mb-12">
+                We are building IndiSanté on a foundation of rigorous standards to ensure your peace of mind and access to safe, regulated care across borders.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <span class="text-4xl text-green-500 mb-3">✅</span>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">GDPR-Ready Data Protection</h4>
+                    <p class="text-gray-700 text-center">Your personal and health data are protected by the highest European privacy standards, ensuring confidentiality and control.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <span class="text-4xl text-green-500 mb-3">✅</span>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Cross-Border Healthcare Compliance</h4>
+                    <p class="text-gray-700 text-center">We meticulously navigate international healthcare regulations to ensure seamless, legal, and ethical care delivery.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <span class="text-4xl text-green-500 mb-3">✅</span>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Built for India-France Regulation Sync</h4>
+                    <p class="text-gray-700 text-center">Our platform design anticipates and integrates with the complex regulatory frameworks for telemedicine between India and France.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-16 bg-blue-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-blue-800 mb-8">Meet Our Visionary Team</h2>
+            <p class="text-lg text-gray-700 max-w-4xl mx-auto mb-12">
+                Our diverse team combines deep expertise in healthcare, artificial intelligence, and cultural understanding, united by a passion to make a real difference.
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Founder 1 -->
+                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/150x150/dbeafe/1e40af?text=Founder+1" alt="Founder 1" class="w-36 h-36 rounded-full object-cover mb-4 shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800">Harika Yadav</h3>
+                    <p class="text-blue-600 mb-2">Founder & CEO</p>
+                    <p class="text-gray-700 text-center text-sm">
+                        [Brief bio: e.g., "With a background in [relevant field] and personal experience navigating healthcare as an Indian abroad, Harika leads IndiSanté's vision and strategy."]</p>
+                </div>
+                <!-- Add more team members as needed -->
+                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/150x150/dbeafe/1e40af?text=Team+Member+2" alt="Team Member 2" class="w-36 h-36 rounded-full object-cover mb-4 shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800">Dr. Anya Sharma</h3>
+                    <p class="text-blue-600 mb-2">Chief Medical Officer</p>
+                    <p class="text-gray-700 text-center text-sm">
+                        [Brief bio: e.g., "A licensed physician with extensive experience in international health and a passion for patient-centered care. Drives our medical guidelines and clinician network."]</p>
+                </div>
+                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/150x150/dbeafe/1e40af?text=Team+Member+3" alt="Team Member 3" class="w-36 h-36 rounded-full object-cover mb-4 shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800">Arjun Singh</h3>
+                    <p class="text-blue-600 mb-2">Head of AI Development</p>
+                    <p class="text-gray-700 text-center text-sm">
+                        [Brief bio: e.g., "An AI expert specializing in natural language processing and cultural nuance, building the intelligent core of IndiSanté's platform."]</p>
+                </div>
+            </div>
+            <!-- Optional: Advisors Section -->
+            <h3 class="text-3xl font-bold text-blue-700 mb-8 mt-12">Our Esteemed Advisors</h3>
+            <div class="flex flex-wrap justify-center gap-8 max-w-4xl mx-auto">
+                <div class="flex flex-col items-center">
+                    <img src="https://placehold.co/100x100/e0f2fe/1e40af?text=Advisor+1" alt="Advisor 1" class="w-24 h-24 rounded-full object-cover mb-2">
+                    <p class="font-semibold text-gray-800">Advisor Name 1</p>
+                    <p class="text-sm text-gray-600 text-center">Expertise Area</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="https://placehold.co/100x100/e0f2fe/1e40af?text=Advisor+2" alt="Advisor 2" class="w-24 h-24 rounded-full object-cover mb-2">
+                    <p class="font-semibold text-gray-800">Advisor Name 2</p>
+                    <p class="text-sm text-gray-600 text-center">Expertise Area</p>
+                </div>
+                <!-- Add more advisors -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Get in Touch / Waitlist Form -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center max-w-2xl">
+            <h2 class="text-4xl font-bold text-blue-800 mb-8">Ready for Seamless Healthcare?</h2>
+            <p class="text-lg text-gray-700 mb-8">
+                Join our waitlist to be among the first to get access to IndiSanté. We'll keep you updated on our progress and launch.
+            </p>
+            <form id="waitlist-form" class="space-y-6 p-8 bg-blue-50 rounded-lg shadow-md">
+                <div>
+                    <label for="name" class="sr-only">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required class="text-gray-700">
+                </div>
+                <div>
+                    <label for="email" class="sr-only">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email Address" required class="text-gray-700">
+                </div>
+                <div>
+                    <label for="role" class="sr-only">Are you a Student, Professional, or Parent?</label>
+                    <input type="text" id="role" name="role" placeholder="Are you a Student, Professional, or Parent?" class="text-gray-700">
+                </div>
+                <button type="submit">Join the Waitlist</button>
+                <p class="text-sm text-gray-600 mt-4">
+                    Or reach us directly at: <a href="mailto:contact@indisante.com" class="text-blue-600 hover:underline">contact@indisante.com</a>
+                </p>
+            </form>
+            <div id="waitlist-message" class="mt-4 text-center text-lg text-green-700 hidden">
+                Thank you for joining our waitlist! We'll be in touch soon.
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4">&copy; 2025 IndiSanté. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 text-sm">
+                <a href="#" class="hover:text-blue-400 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-blue-400 transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-blue-400 transition-colors">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for Waitlist Form Submission (Client-side only for this static page) -->
+    <script>
+        document.getElementById('waitlist-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const form = event.target;
+            const formData = new FormData(form);
+            const email = formData.get('email');
+            const name = formData.get('name');
+            const role = formData.get('role');
+
+            // In a real application, you would send this data to a backend server.
+            // For this static page, we'll just show a success message.
+            console.log('Waitlist submission:', { name, email, role });
+
+            const messageDiv = document.getElementById('waitlist-message');
+            messageDiv.classList.remove('hidden'); // Show the success message
+            form.reset(); // Clear the form
+        });
+    </script>
 </body>
 </html>
