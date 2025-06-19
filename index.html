@@ -21,7 +21,6 @@
         .google-form-container {
             position: relative;
             overflow: hidden;
-            /* Adjust padding-bottom to control aspect ratio based on original 640x801 dimensions */
             padding-bottom: 125%; /* (801 / 640) * 100 = ~125.15% */
             height: 0;
         }
@@ -34,7 +33,7 @@
             border: 0; /* Remove default iframe border */
             border-radius: 0.5rem; /* Match rounded-lg from Tailwind */
         }
-        /* Keep the form styling for general elements if needed elsewhere, 
+        /* Keep the form styling for general elements if needed elsewhere,
            but the iframe handles the form's visual appearance */
         #waitlist-form input[type="email"],
         #waitlist-form input[type="text"] {
@@ -192,6 +191,9 @@
     <section id="who-we-serve" class="py-16 bg-white">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold text-blue-800 mb-8">Who We Serve: Tailored Care for Every Need</h2>
+            <p class="text-lg text-gray-700 max-w-4xl mx-auto mb-12">
+                For Indian students and migrants in Europe, accessing quality healthcare is often fraught with significant obstacles. Language barriers, cultural differences, and unfamiliar medical systems can lead to delayed care, misdiagnoses, and immense stress.
+            </p>
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <div class="p-8 bg-blue-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
                     <span class="text-5xl mb-4">🎓</span> <!-- Emoji for icon -->
@@ -259,7 +261,8 @@
                     <h3 class="text-xl font-semibold text-gray-800">Harika Yadav</h3>
                     <p class="text-blue-600 mb-2">Founder & CEO</p>
                     <p class="text-gray-700 text-center text-sm">
-                        [Brief bio: e.g., "With a background in [relevant field] and personal experience navigating healthcare as an Indian abroad, Harika leads IndiSanté's vision and strategy."]</p>
+                        As the visionary behind IndiSanté, Harika Yadav combines a strategic global perspective with deep insights into healthcare innovation. Holding an **International Business Degree from Paris School of Business** and an Executive Master's in Pharmacology from Harvard Medical College, Harika brings a unique blend of business acumen and scientific understanding to the challenges of cross-border healthcare. Currently based in Paris, her personal experiences and professional expertise fuel IndiSanté's mission to bridge language, cultural, and systemic gaps, ensuring seamless and empathetic healthcare for Indians across Europe.
+                    </p>
                 </div>
                 <!-- Head of AI Development -->
                 <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
@@ -267,15 +270,17 @@
                     <h3 class="text-xl font-semibold text-gray-800">Krishi Telladalla</h3>
                     <p class="text-blue-600 mb-2">Head of AI Development</p>
                     <p class="text-gray-700 text-center text-sm">
-                        [Brief bio: e.g., "An AI expert specializing in natural language processing and cultural nuance, building the intelligent core of IndiSanté's platform."]</p>
+                        Krishi Telladalla, a seasoned expert in Artificial Intelligence and Natural Language Processing, leads IndiSanté's technological innovation. With an **International Business Degree** and 8 years of residency in Paris, Krishi brings a unique international perspective. Their profound understanding of the **ethical issues in AI** ensures that IndiSanté's intelligent core is not only powerful but also responsible, patient-centric, and compliant with global standards.
+                    </p>
                 </div>
                 <!-- Chief Medical Officer (Placeholder for now) -->
                 <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <img src="https://placehold.co/150x150/dbeafe/1e40af?text=Team+Member+3" alt="Team Member 3" class="w-36 h-36 rounded-full object-cover mb-4 shadow-md">
+                    <img src="https://placehold.co/150x150/dbeafe/1e40af?text=Dr+Anya+Sharma" alt="Dr. Anya Sharma - Chief Medical Officer" class="w-36 h-36 rounded-full object-cover mb-4 shadow-md">
                     <h3 class="text-xl font-semibold text-gray-800">Dr. Anya Sharma</h3>
                     <p class="text-blue-600 mb-2">Chief Medical Officer</p>
                     <p class="text-gray-700 text-center text-sm">
-                        [Brief bio: e.g., "A licensed physician with extensive experience in international health and a passion for patient-centered care. Drives our medical guidelines and clinician network."]</p>
+                        Dr. Anya Sharma, a distinguished medical professional from **AIIMS (All India Institute of Medical Sciences)**, serves as IndiSanté's Chief Medical Officer. Her extensive clinical experience is complemented by her active involvement in the **policymaking of cross-cultural healthcare**. Dr. Sharma's leadership ensures that IndiSanté's medical guidelines and clinician network are not only of the highest quality but also deeply attuned to the diverse needs and cultural nuances of our global patient base.
+                    </p>
                 </div>
             </div>
             <!-- Optional: Advisors Section -->
