@@ -17,16 +17,16 @@
     <!-- Font Awesome for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Custom CSS Variables for new palette (Green Theme) */
+        /* Custom CSS Variables for new palette (Emerald Green Theme) */
         :root {
-            --primary-brand-color: #28A745; /* A vibrant, modern green */
-            --primary-brand-dark: #1F7A33; /* Slightly darker green for hover/accents */
-            --accent-green-button: #218838; /* A rich green for primary buttons */
+            --primary-brand-color: #00806A; /* A balanced, vibrant emerald green */
+            --primary-brand-dark: #00594B; /* Darker emerald for hover/accents */
+            --accent-green-button: #009688; /* Slightly more vibrant emerald for primary buttons */
             --text-dark: #1F2937; /* Dark gray for main body text */
             --text-light: #FFFFFF; /* White text on dark backgrounds */
             --bg-light: #F9FAFB; /* Very light background */
-            --bg-gradient-start: #E6F7E6; /* Very light mint green for hero gradient start */
-            --bg-gradient-end: #D4EDDA; /* Slightly darker mint green for hero gradient end */
+            --bg-gradient-start: #E6F7F3; /* Very light emerald for hero gradient start */
+            --bg-gradient-end: #C0E0DB; /* Slightly darker emerald for hero gradient end */
         }
 
         body {
@@ -42,12 +42,12 @@
             color: var(--primary-brand-color);
         }
         .brand-button {
-            background-color: var(--accent-green-button); /* Using the vibrant green for primary buttons */
+            background-color: var(--accent-green-button); /* Using the vibrant emerald for primary buttons */
             color: var(--text-light);
             transition: background-color 0.3s ease;
         }
         .brand-button:hover {
-            background-color: var(--primary-brand-dark); /* Darker green on hover */
+            background-color: var(--primary-brand-dark); /* Darker emerald on hover */
         }
         .hero-gradient {
             background-image: linear-gradient(to bottom right, var(--bg-gradient-start), var(--bg-gradient-end));
@@ -68,6 +68,22 @@
             height: 100%;
             border: 0; /* Remove default iframe border */
             border-radius: 0.5rem; /* Match rounded-lg from Tailwind */
+        }
+
+        /* Styling for the embedded guide content - now only for guide-healthcare.html */
+        /* These styles are kept in index.html for consistency in the response,
+           but ideally would only be in guide-healthcare.html for production */
+        .guide-content h3 {
+            @apply text-2xl font-semibold text-green-700 mt-6 mb-3;
+        }
+        .guide-content h4 {
+            @apply text-xl font-semibold text-gray-800 mb-2;
+        }
+        .guide-content ul {
+            @apply list-disc pl-5 mb-4;
+        }
+        .guide-content p {
+            @apply mb-4 leading-relaxed text-gray-700;
         }
     </style>
 </head>
@@ -110,7 +126,7 @@
         </div>
     </section>
 
-    <!-- Traction Section (New) -->
+    <!-- Traction Section -->
     <section id="traction" class="py-16 bg-white">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold text-green-800 mb-8">Our Early Traction: Validating the Need</h2>
@@ -295,7 +311,7 @@
         </div>
     </section>
 
-    <!-- Resources & Guides Section (New) -->
+    <!-- Resources & Guides Section (Now linking to external guide pages) -->
     <section id="resources" class="py-16 bg-blue-50">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold text-green-800 mb-8">Your Essential Guides for Healthcare Abroad</h2>
@@ -303,41 +319,41 @@
                 We're committed to empowering the Indian diaspora with clear, actionable information. Download our short and sweet guides to navigate European healthcare systems with confidence.
             </p>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Guide 1 -->
+                <!-- Guide 1: Navigating European Healthcare -->
                 <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
                     <img src="https://placehold.co/250x150/CCEBD7/1F7A33?text=EU+Healthcare+Basics" alt="Guide: Understanding EU Healthcare Basics" class="w-full h-auto mb-4 rounded-md shadow-sm">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Navigating European Healthcare: A Quick Start</h3>
                     <p class="text-gray-700 text-center text-sm mb-4">
                         Your essential overview of how healthcare systems work across Europe, focusing on key differences and first steps for new arrivals.
                     </p>
-                    <a href="#" class="brand-button py-2 px-4 rounded-full text-sm font-semibold">Download Guide</a>
+                    <a href="guide-healthcare.html" class="brand-button py-2 px-4 rounded-full text-sm font-semibold">Read Guide</a>
                 </div>
-                <!-- Guide 2 -->
+                <!-- Guide 2: Health Insurance Tips -->
                 <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
                     <img src="https://placehold.co/250x150/CCEBD7/1F7A33?text=Health+Insurance+Tips" alt="Guide: Health Insurance Tips for Immigrants" class="w-full h-auto mb-4 rounded-md shadow-sm">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Health Insurance Demystified for Indian Students</h3>
                     <p class="text-gray-700 text-center text-sm mb-4">
                         Understand public vs. private insurance, student-specific plans, and how to get coverage in your new European country.
                     </p>
-                    <a href="#" class="brand-button py-2 px-4 rounded-full text-sm font-semibold">Download Guide</a>
+                    <a href="#" class="brand-button py-2 px-4 rounded-full text-sm font-semibold opacity-50 cursor-not-allowed">Coming Soon</a>
                 </div>
-                <!-- Guide 3 -->
+                <!-- Guide 3: Cultural Etiquette for Doctor Visits -->
                 <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                     <img src="https://placehold.co/250x150/CCEBD7/1F7A33?text=Cultural+Wellness+Guide" alt="Guide: Cultural Wellness Abroad" class="w-full h-auto mb-4 rounded-md shadow-sm">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Cultural Etiquette for Doctor Visits in Europe</h3>
                     <p class="text-gray-700 text-center text-sm mb-4">
                         Tips on communication, expectations, and cultural norms in European medical settings to ensure comfortable consultations.
                     </p>
-                    <a href="#" class="brand-button py-2 px-4 rounded-full text-sm font-semibold">Download Guide</a>
+                    <a href="#" class="brand-button py-2 px-4 rounded-full text-sm font-semibold opacity-50 cursor-not-allowed">Coming Soon</a>
                 </div>
-                <!-- Guide 4 (Optional, for more content) -->
+                <!-- Guide 4: Mental Wellness Toolkit -->
                 <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                     <img src="https://placehold.co/250x150/CCEBD7/1F7A33?text=Mental+Health+Support" alt="Guide: Mental Health Support for Migrants" class="w-full h-auto mb-4 rounded-md shadow-sm">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Mental Wellness Toolkit for Migrants</h3>
                     <p class="text-gray-700 text-center text-sm mb-4">
                         Practical resources and strategies to support mental health and well-being while living and studying abroad.
                     </p>
-                    <a href="#" class="brand-button py-2 px-4 rounded-full text-sm font-semibold">Download Guide</a>
+                    <a href="#" class="brand-button py-2 px-4 rounded-full text-sm font-semibold opacity-50 cursor-not-allowed">Coming Soon</a>
                 </div>
             </div>
         </div>
@@ -396,7 +412,7 @@
                         AI and NLP expert with an *International Business Degree* and 8 years in Paris. Leads technological innovation at IndiSanté with a profound understanding of **ethical AI issues**, ensuring responsible and patient-centric solutions.
                     </p>
                 </div>
-                <!-- Chief Medical Officer (Placeholder for now) -->
+                <!-- Chief Medical Officer -->
                 <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                     <img src="ChatGPT Image Jun 21, 2025, 08_41_27 AM.jpg" alt="Dr. Anya Sharma - Chief Medical Officer" class="w-36 h-36 rounded-full object-cover mb-4 shadow-md">
                     <h3 class="text-xl font-semibold text-gray-800">Dr. Anya Sharma</h3>
@@ -453,7 +469,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8 mt-12">
         <div class="container mx-auto px-4 text-center">
-            <p class="mb-4">&copy; 2025 IndiSanté. All rights reserved.</p>
+            <p>&copy; 2025 IndiSanté. All rights reserved.</p>
             <div class="flex justify-center space-x-6 text-sm mb-4">
                 <a href="privacy.html" class="hover:text-green-400 transition-colors">Privacy Policy</a>
                 <a href="terms.html" class="hover:text-green-400 transition-colors">Terms of Service</a>
