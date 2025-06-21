@@ -10,39 +10,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-teal: #008080; /* Teal color from your brand logo */
-            --primary-teal-dark: #006666; /* Slightly darker for hover states */
+            --primary-brand-color: #00806A; /* Emerald Green */
+            --primary-brand-dark: #00594B; /* Darker Emerald for hover states */
+            --accent-green-button: #009688; /* Vibrant emerald for buttons */
             --text-light: #FFFFFF; /* White for text on dark backgrounds */
-            --text-dark: #334155; /* Dark gray for text on light backgrounds */
-            --bg-light: #f8fafc; /* Light gray background */
+            --text-dark: #1F2937; /* Dark gray for text on light backgrounds */
+            --bg-light: #F9FAFB; /* Light gray background for content cards */
+            --bg-page: #00806A; /* Deep emerald for body background */
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
+            background-color: var(--bg-page); /* Changed to emerald green background */
+            color: var(--text-light); /* Changed to lighter font (white) */
         }
 
         .brand-bg {
-            background-color: var(--primary-teal);
+            background-color: var(--primary-brand-color);
         }
 
         .brand-text {
-            color: var(--primary-teal);
+            color: var(--primary-brand-color);
         }
 
         .brand-border {
-            border-color: var(--primary-teal);
+            border-color: var(--primary-brand-color);
         }
 
         .brand-button {
-            background-color: var(--primary-teal);
+            background-color: var(--accent-green-button);
             color: var(--text-light);
             transition: background-color 0.3s ease;
         }
 
         .brand-button:hover {
-            background-color: var(--primary-teal-dark);
+            background-color: var(--primary-brand-dark);
         }
 
         /* Styles for calendar cells */
@@ -76,7 +78,7 @@
 
     <!-- Booking Interface Container -->
     <div class="min-h-screen flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 max-w-xl w-full">
+        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 max-w-xl w-full text-gray-700"> <!-- Added text-gray-700 for content inside white card -->
 
             <!-- Header with Back Button -->
             <div class="flex items-center mb-6">
@@ -98,14 +100,14 @@
             <!-- Language Selection -->
             <div class="flex justify-center items-center space-x-4 mb-8">
                 <div class="relative inline-block text-left">
-                    <select id="doc-language" class="block w-full rounded-md brand-border border px-4 py-2 pr-8 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white text-gray-700">
+                    <select id="doc-language" class="block w-full rounded-md brand-border border px-4 py-2 pr-8 leading-tight focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent bg-white text-gray-700">
                         <option value="hindi">Hindi</option>
                         <option value="english" selected>English</option>
                         <option value="french">French</option>
                     </select>
                 </div>
                 <div class="relative inline-block text-left">
-                    <select id="consult-language" class="block w-full rounded-md brand-border border px-4 py-2 pr-8 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white text-gray-700">
+                    <select id="consult-language" class="block w-full rounded-md brand-border border px-4 py-2 pr-8 leading-tight focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent bg-white text-gray-700">
                         <option value="hindi">Consult in Hindi</option>
                         <option value="english" selected>Consult in English</option>
                         <option value="french">Consult in French</option>
@@ -114,7 +116,7 @@
             </div>
 
             <!-- Calendar -->
-            <div class="mb-8 p-4 rounded-lg bg-blue-50 shadow-inner">
+            <div class="mb-8 p-4 rounded-lg bg-blue-50 shadow-inner text-gray-700"> <!-- Added text-gray-700 here -->
                 <div class="flex justify-between items-center mb-4">
                     <button id="prev-month" class="p-2 rounded-full hover:bg-gray-200 transition-colors">
                         <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
@@ -222,7 +224,7 @@
                 cell.textContent = day;
                 cell.className = 'calendar-cell relative'; // Added relative for potential future indicators
 
-                const fullDate = `${currentYear}-${currentMonth}-${day}`; // Format: YYYY-M-D
+                const fullDate = `${currentYear}-${currentMonth}-${day}`; // Format:YYYY-M-D
                 const today = new Date();
                 const cellDate = new Date(currentYear, currentMonth, day);
 
@@ -282,7 +284,7 @@
                 slots.forEach(slot => {
                     const slotDiv = document.createElement('button');
                     slotDiv.textContent = slot;
-                    slotDiv.className = 'py-2 px-4 border brand-border rounded-lg hover:bg-teal-50 hover:border-teal-500 transition-all duration-200 cursor-pointer';
+                    slotDiv.className = 'py-2 px-4 border brand-border rounded-lg hover:bg-green-50 hover:border-emerald-500 transition-all duration-200 cursor-pointer'; /* Changed hover color */
                     slotDiv.addEventListener('click', () => selectTimeSlot(slot, slotDiv));
                     timeSlotsGrid.appendChild(slotDiv);
                 });
@@ -313,7 +315,8 @@
                 modalBookingDetails.textContent = `${selectedDate.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} at ${selectedTimeSlot}`;
                 bookingConfirmationModal.classList.remove('hidden');
             } else {
-                alert('Please select a date and time slot to book.'); // Use simple alert as this is a client-side mock
+                // Using a simple alert as this is a client-side mock for demonstration
+                alert('Please select a date and time slot to book.'); 
             }
         }
 
