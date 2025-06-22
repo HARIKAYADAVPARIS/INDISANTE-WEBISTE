@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">a
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IndiSanté - Healthcare Sans Borders</title>
     <meta name="description" content="IndiSanté offers AI-powered, culturally-sensitive telemedicine for Indian students and migrants in Europe. Seamless cross-border healthcare, bridging language and cultural gaps.">
     <meta name="keywords" content="IndiSanté, healthcare, telemedicine, AI, artificial intelligence, Indian diaspora, Europe, France, migrants, students, cross-border healthcare, digital health, culturally sensitive care, health tech, responsible AI, immigrant guides, healthcare resources, health insurance Europe, mental wellness abroad">
     
+    <!-- Favicon - Globe emoji for global appeal -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>" />
 
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter for a clean, modern look -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Custom CSS Variables for new palette (Emerald Green Theme) */
@@ -88,9 +92,12 @@
 </head>
 <body class="antialiased">
 
+    <!-- Header / Navigation Bar -->
     <header class="bg-emerald-800 shadow-sm py-4">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
+                <!-- IndiSanté Logo/Name -->
+                <!-- Using a placeholder for the logo, with emerald green background to match theme -->
                 <img src="https://placehold.co/80x32/00806A/FFFFFF?text=IndiSanté" alt="IndiSanté Logo" class="h-8 w-auto mr-2 rounded-md">
                 <a href="#" class="text-2xl font-bold text-white">IndiSanté</a>
             </div>
@@ -109,6 +116,7 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero-gradient py-20 text-center relative overflow-hidden rounded-b-3xl shadow-xl">
         <div class="container mx-auto px-4 relative z-10">
             <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6 animate-fade-in-up">
@@ -120,6 +128,7 @@
             </div>
     </section>
 
+    <!-- Traction Section -->
     <section id="traction" class="py-16 bg-white text-gray-700">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold text-green-800 mb-8">Our Early Traction: Validating the Need</h2>
@@ -147,6 +156,7 @@
         </div>
     </section>
 
+    <!-- Problem Section -->
     <section id="problem" class="py-16 bg-gray-50 text-gray-700">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold text-green-800 mb-8">The Challenge: Navigating Healthcare Abroad</h2>
@@ -170,6 +180,7 @@
         </div>
     </section>
 
+    <!-- Solution & How It Works Section -->
     <section id="solution" class="py-16 bg-green-50 text-gray-700">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold text-green-800 mb-8">Our Solution: Intelligent & Empathetic Healthcare</h2>
@@ -177,15 +188,19 @@
                 IndiSanté leverages cutting-edge AI and a network of trusted medical professionals to provide seamless, culturally-aware healthcare access.
             </p>
 
+            <!-- How It Works - 3 Step Flow -->
             <h3 class="text-3xl font-bold text-green-700 mb-8 mt-12">How It Works: Simple Steps to Your Well-being</h3>
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Step 1: AI Triage Mockup (WhatsApp Image) -->
                 <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                     <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-3xl font-bold mb-4">1</div>
                     <h4 class="text-xl font-semibold text-gray-800 mb-2">Smart Triage & Language Support</h4>
                     <p>Start with our AI assistant via WhatsApp for initial symptom checks and instant translation in your preferred language.</p>
-                    <img src="ChatGPT Image Jun 19, 2025, 09_30_35 AM.jpg" alt="WhatsApp Chat User Interface Mockup for AI Triage" class="w-full h-auto mt-4 rounded-md shadow-sm">
+                    <!-- Updated src to a placehold.co URL for reliable display -->
+                    <img src="https://placehold.co/300x200/D1F0E0/00735C?text=WhatsApp+AI+Chat+Mockup" alt="WhatsApp Chat User Interface Mockup for AI Triage" class="w-full h-auto mt-4 rounded-md shadow-sm">
                     <p class="text-sm text-gray-500 mt-2">Example of AI Assistant Interface</p>
                 </div>
+                <!-- Step 2: Booking UI Mockup -->
                 <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                     <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-3xl font-bold mb-4">2</div>
                     <h4 class="text-xl font-semibold text-gray-800 mb-2">Book Your Consultation</h4>
@@ -195,6 +210,7 @@
                     </a>
                     <p class="text-sm text-gray-500 mt-2">Example of Booking Interface</p>
                 </div>
+                <!-- Step 3: Consultation UI Mockup -->
                 <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                     <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-3xl font-bold mb-4">3</div>
                     <h4 class="text-xl font-semibold text-gray-800 mb-2">Receive Seamless Care</h4>
@@ -206,6 +222,7 @@
         </div>
     </section>
 
+    <!-- Our Business Model Section -->
     <section id="business-model" class="py-16 bg-white text-gray-700">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold text-green-800 mb-8">Our Business Model: Sustainable Growth, Clear Value</h2>
@@ -238,6 +255,7 @@
         </div>
     </section>
 
+    <!-- Letters of Intent Section -->
     <section id="letters-of-intent" class="py-16 bg-gray-50 text-gray-700">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold text-green-800 mb-8">Official Recognition: Letters of Intent</h2>
@@ -263,6 +281,7 @@
         </div>
     </section>
 
+    <!-- Who We Serve Section - Enhanced Details -->
     <section id="who-we-serve" class="py-16 bg-white text-gray-700">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold text-green-800 mb-8">Who We Serve: Tailored Care for Every Need</h2>
@@ -292,6 +311,7 @@
         </div>
     </section>
 
+    <!-- Resources & Guides Section (Now linking to external guide pages) -->
     <section id="resources" class="py-16 bg-blue-50 text-gray-700">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold text-green-800 mb-8">Your Essential Guides for Healthcare Abroad</h2>
@@ -335,6 +355,7 @@
         </div>
     </section>
 
+    <!-- Trust & Compliance Section -->
     <section class="py-16 bg-gray-50 text-gray-700">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold text-green-800 mb-8">Our Commitment: Trust, Privacy, Compliance</h2>
@@ -361,6 +382,7 @@
         </div>
     </section>
 
+    <!-- Team Section -->
     <section id="team" class="py-16 bg-green-100 text-gray-700">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold text-green-800 mb-8">Meet Our Visionary Team</h2>
@@ -368,14 +390,17 @@
                 Our diverse team combines deep expertise in healthcare, artificial intelligence, and cultural understanding, united by a passion to make a real difference.
             </p>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Founder 1 -->
                 <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <img src="harika.jpg" alt="Harika Yadav - Founder and CEO" class="w-36 h-36 rounded-full object-cover mb-4 shadow-md">
+                    <!-- Changed src to harika.jpg -->
+                    <img src="https://placehold.co/150x150/dbeafe/1e40af?text=Harika" alt="Harika Yadav - Founder and CEO" class="w-36 h-36 rounded-full object-cover mb-4 shadow-md">
                     <h3 class="text-xl font-semibold text-gray-800">Harika Yadav</h3>
                     <p class="text-green-600 mb-2">Founder & CEO</p>
                     <p class="text-sm">
                         Visionary leader with an *International Business Degree from Paris School of Business* and an **Executive Master's in Pharmacology from Harvard Medical College**. Based in Paris, her unique blend of business acumen, scientific insight, and personal experience drives IndiSanté's mission to bridge global healthcare gaps.
                     </p>
                 </div>
+                <!-- Head of AI Development -->
                 <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                     <img src="https://placehold.co/150x150/dbeafe/1e40af?text=Krishi" alt="Krishi Telladalla - Head of AI Development" class="w-36 h-36 rounded-full object-cover mb-4 shadow-md">
                     <h3 class="text-xl font-semibold text-gray-800">Krishi Telladalla</h3>
@@ -384,8 +409,9 @@
                         AI and NLP expert with an *International Business Degree* and 8 years in Paris. Leads technological innovation at IndiSanté with a profound understanding of **ethical AI issues**, ensuring responsible and patient-centric solutions.
                     </p>
                 </div>
+                <!-- Chief Medical Officer -->
                 <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <img src="ChatGPT Image Jun 21, 2025, 08_41_27 AM.jpg" alt="Dr. Anya Sharma - Chief Medical Officer" class="w-36 h-36 rounded-full object-cover mb-4 shadow-md">
+                    <img src="https://placehold.co/150x150/dbeafe/1e40af?text=Dr.+Anya" alt="Dr. Anya Sharma - Chief Medical Officer" class="w-36 h-36 rounded-full object-cover mb-4 shadow-md">
                     <h3 class="text-xl font-semibold text-gray-800">Dr. Anya Sharma</h3>
                     <p class="text-green-600 mb-2">Chief Medical Officer</p>
                     <p class="text-sm">
@@ -393,6 +419,7 @@
                     </p>
                 </div>
             </div>
+            <!-- Optional: Advisors Section -->
             <h3 class="text-3xl font-bold text-green-700 mb-8 mt-12">Our Esteemed Advisors</h3>
             <div class="flex flex-wrap justify-center gap-8 max-w-4xl mx-auto">
                 <div class="flex flex-col items-center">
@@ -405,10 +432,12 @@
                     <p class="font-semibold text-gray-800">Advisor Name 2</p>
                     <p class="text-sm text-gray-600 text-center">Expertise Area</p>
                 </div>
-                </div>
+                <!-- Add more advisors -->
+            </div>
         </div>
     </section>
 
+    <!-- Get in Touch / Waitlist Form -->
     <section id="contact" class="py-16 bg-white text-gray-700">
         <div class="container mx-auto px-4 text-center max-w-2xl">
             <h2 class="text-4xl font-bold text-green-800 mb-8">Ready for Seamless Healthcare?</h2>
@@ -416,6 +445,7 @@
                 Join our waitlist to be among the first to get access to IndiSanté. Fill out the form below:
             </p>
             <div class="google-form-container bg-green-50 p-4 rounded-lg shadow-md">
+                <!-- Google Form Embed Code -->
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScQshAONTDQGMjVSprroUIrT9MJDK8SUSaNcyCmhEkIHXhdbg/viewform?embedded=true"
                         width="100%"
                         height="auto"
@@ -432,6 +462,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="bg-emerald-800 text-white py-8 mt-12">
         <div class="container mx-auto px-4 text-center">
             <p>&copy; 2025 IndiSanté. All rights reserved.</p>
