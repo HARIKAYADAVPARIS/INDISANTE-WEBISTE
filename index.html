@@ -1,581 +1,164 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IndiSanté - Healthcare Sans Borders</title>
-    <meta name="description" content="IndiSanté offers AI-powered, culturally-sensitive telemedicine for Indian students and migrants in Europe. Seamless cross-border healthcare, bridging language and cultural gaps.">
-    <meta name="keywords" content="IndiSanté, healthcare, telemedicine, AI, artificial intelligence, Indian diaspora, Europe, France, migrants, students, cross-border healthcare, digital health, culturally sensitive care, health tech, responsible AI, immigrant guides, healthcare resources, health insurance Europe, mental wellness abroad">
-    
-    <!-- Favicon - Globe emoji for global appeal -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>" />
+IndiSanté Logo
+IndiSanté
+Problem
+Solution
+Business Model
+LOIs
+Who We Serve
+Resources
+Team
+Contact
+Healthcare Without Borders:
+Seamless Care for Indians in Europe
+Bridging language, culture, and access gaps with AI-powered telemedicine and culturally-sensitive support.
+Our Early Traction: Validating the Need
+IndiSanté is addressing an underserved pain point for over **500,000 Indian migrants and students in Europe**. Our early engagement and test results strongly validate the critical demand for our platform.
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter for a clean, modern look -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for social media icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Custom CSS Variables for new palette (Emerald Green Theme) */
-        :root {
-            --primary-brand-color: #00806A; /* A balanced, vibrant emerald green */
-            --primary-brand-dark: #00594B; /* Darker emerald for hover/accents */
-            --accent-green-button: #009688; /* Slightly more vibrant emerald for primary buttons */
-            --text-dark: #1F2937; /* Dark gray for main body text */
-            --text-light: #FFFFFF; /* White text on dark backgrounds */
-            --bg-light: #F9FAFB; /* Very light background */
-            
-            /* New dark emerald gradient for hero section */
-            --bg-gradient-start-dark: #00594B;
-            --bg-gradient-end-dark: #00806A;
-        }
+87% Strong Need
+of surveyed users expressed a strong need for easier healthcare access tailored to their unique challenges abroad.
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--primary-brand-color); /* Changed to emerald green */
-            color: var(--text-light); /* Changed to lighter font (white) */
-        }
-        
-        .brand-primary-bg {
-            background-color: var(--primary-brand-color);
-        }
-        .brand-primary-text {
-            color: var(--primary-brand-color);
-        }
-        .brand-button {
-            background-color: var(--accent-green-button); /* Using the vibrant emerald for primary buttons */
-            color: var(--text-light);
-            transition: background-color 0.3s ease;
-        }
-        .brand-button:hover {
-            background-color: var(--primary-brand-dark); /* Darker emerald on hover */
-        }
-        .hero-gradient {
-            /* Changed to a dark emerald gradient */
-            background-image: linear-gradient(to bottom right, var(--bg-gradient-start-dark), var(--bg-gradient-end-dark));
-        }
+3 out of 4 would 'feel lost'
+of our testers said they’d ‘feel lost’ without a platform like IndiSanté, highlighting the critical gap we fill.
 
-        /* Styles for Google Form embed to make it responsive */
-        .google-form-container {
-            position: relative;
-        }
-        .google-form-container iframe {
-            display: block;
-            width: 100%;
-            min-height: 700px;
-            border: 0;
-            border-radius: 0.5rem;
-        }
+Active Co-Development
+We're actively co-developing our solution with users through WhatsApp-based prototypes, ensuring a truly user-centric product.
 
-        /* Styling for the embedded guide content */
-        .guide-content h3 {
-            @apply text-2xl font-semibold text-green-700 mt-6 mb-3;
-        }
-        .guide-content h4 {
-            @apply text-xl font-semibold text-gray-800 mb-2;
-        }
-        .guide-content ul {
-            @apply list-disc pl-5 mb-4;
-        }
-        .guide-content p {
-            @apply mb-4 leading-relaxed text-gray-700;
-        }
+Strong Community Pull
+Early support from diaspora leaders and campus communities shows strong pull for our services — not just push.
 
-        /* New: Styles for the Chat Demo */
-        .chat-container {
-            @apply bg-white rounded-lg shadow-md p-4 flex flex-col;
-            height: 450px; /* Fixed height for chat window */
-            max-width: 400px; /* Max width for chat window */
-            margin: 0 auto;
-            border: 1px solid #e0e0e0;
-        }
-        .chat-messages {
-            @apply flex-grow overflow-y-auto p-3 mb-3 bg-gray-50 rounded-lg;
-            scroll-behavior: smooth;
-        }
-        .message-bubble {
-            @apply p-2 rounded-lg mb-2 max-w-[80%];
-            word-wrap: break-word;
-        }
-        .user-message {
-            @apply bg-blue-100 text-blue-800 self-end;
-            border-bottom-right-radius: 0;
-        }
-        .ai-message {
-            @apply bg-green-100 text-green-800 self-start;
-            border-bottom-left-radius: 0;
-        }
-        .chat-input-area {
-            @apply flex items-center;
-        }
-        .chat-input-area input {
-            @apply flex-grow p-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-emerald-500;
-        }
-        .chat-input-area button {
-            @apply bg-emerald-600 hover:bg-emerald-700 text-white p-2 rounded-r-lg font-semibold;
-            flex-shrink: 0; /* Prevent button from shrinking */
-        }
-        .chat-loading-spinner {
-            border: 2px solid rgba(0, 0, 0, 0.1);
-            border-left: 2px solid #00806A; /* Emerald green spinner */
-            border-radius: 50%;
-            width: 16px;
-            height: 16px;
-            animation: spin 1s linear infinite;
-            display: inline-block;
-            vertical-align: middle;
-            margin-left: 8px;
-        }
-    </style>
-</head>
-<body class="antialiased">
+The Challenge: Navigating Healthcare Abroad
+For Indian students and migrants in Europe, accessing quality healthcare is often fraught with significant obstacles. Language barriers, cultural differences, and unfamiliar medical systems can lead to delayed care, misdiagnoses, and immense stress.
 
-    <!-- Header / Navigation Bar -->
-    <header class="bg-emerald-800 shadow-sm py-4">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <!-- IndiSanté Logo/Name - Changed to placeholder for guaranteed visibility -->
-                <img src="https://placehold.co/100x32/00806A/FFFFFF?text=IndiSante" alt="IndiSanté Logo" class="h-8 w-auto mr-2 rounded-md">
-                <a href="#" class="text-2xl font-bold text-white">IndiSanté</a>
-            </div>
-            <nav>
-                <ul class="flex space-x-6 text-white font-medium">
-                    <li><a href="#problem" class="hover:text-emerald-300 transition-colors">Problem</a></li>
-                    <li><a href="#solution" class="hover:text-emerald-300 transition-colors">Solution</a></li>
-                    <li><a href="#business-model" class="hover:text-emerald-300 transition-colors">Business Model</a></li>
-                    <li><a href="#letters-of-intent" class="hover:text-emerald-300 transition-colors">LOIs</a></li>
-                    <li><a href="#who-we-serve" class="hover:text-emerald-300 transition-colors">Who We Serve</a></li>
-                    <li><a href="#resources" class="hover:text-emerald-300 transition-colors">Resources</a></li>
-                    <li><a href="#team" class="hover:text-emerald-300 transition-colors">Team</a></li>
-                    <li><a href="#contact" class="hover:text-emerald-300 transition-colors">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+Language Barriers
+Difficulty communicating symptoms and understanding medical advice, leading to frustration and potential errors.
 
-    <!-- Hero Section -->
-    <section class="hero-gradient py-20 text-center relative overflow-hidden rounded-b-3xl shadow-xl">
-        <div class="container mx-auto px-4 relative z-10">
-            <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6 animate-fade-in-up">
-                Healthcare Without Borders: <br class="hidden md:inline"> Seamless Care for Indians in Europe
-            </h1>
-            <h3 class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto animate-fade-in">
-                Bridging language, culture, and access gaps with AI-powered telemedicine and culturally-sensitive support.
-            </h3>
-            </div>
-    </section>
+Cultural Misunderstandings
+Lack of culturally sensitive care and differing expectations about medical practices.
 
-    <!-- Traction Section -->
-    <section id="traction" class="py-16 bg-white text-gray-700">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-green-800 mb-8">Our Early Traction: Validating the Need</h2>
-            <p class="text-lg max-w-4xl mx-auto mb-12">
-                IndiSanté is addressing an underserved pain point for over **500,000 Indian migrants and students in Europe**. Our early engagement and test results strongly validate the critical demand for our platform.
-            </p>
-            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto text-left">
-                <div class="p-6 bg-green-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-3xl font-bold text-green-700 mb-3">87% Strong Need</h3>
-                    <p>of surveyed users expressed a strong need for easier healthcare access tailored to their unique challenges abroad.</p>
-                </div>
-                <div class="p-6 bg-green-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-3xl font-bold text-green-700 mb-3">3 out of 4 would 'feel lost'</h3>
-                    <p>of our testers said they’d ‘feel lost’ without a platform like IndiSanté, highlighting the critical gap we fill.</p>
-                </div>
-                <div class="p-6 bg-green-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Active Co-Development</h3>
-                    <p>We're actively co-developing our solution with users through WhatsApp-based prototypes, ensuring a truly user-centric product.</p>
-                </div>
-                <div class="p-6 bg-green-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Strong Community Pull</h3>
-                    <p>Early support from diaspora leaders and campus communities shows strong pull for our services — not just push.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+Complex Systems
+Navigating appointments, insurance, and local regulations in a new country can be overwhelming.
 
-    <!-- Problem Section -->
-    <section id="problem" class="py-16 bg-gray-50 text-gray-700">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-green-800 mb-8">The Challenge: Navigating Healthcare Abroad</h2>
-            <p class="text-lg max-w-4xl mx-auto mb-12">
-                For Indian students and migrants in Europe, accessing quality healthcare is often fraught with significant obstacles. Language barriers, cultural differences, and unfamiliar medical systems can lead to delayed care, misdiagnoses, and immense stress.
-            </p>
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="p-6 bg-red-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-red-700 mb-3">Language Barriers</h3>
-                    <p>Difficulty communicating symptoms and understanding medical advice, leading to frustration and potential errors.</p>
-                </div>
-                <div class="p-6 bg-yellow-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-yellow-700 mb-3">Cultural Misunderstandings</h3>
-                    <p>Lack of culturally sensitive care and differing expectations about medical practices.</p>
-                </div>
-                <div class="p-6 bg-green-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-green-700 mb-3">Complex Systems</h3>
-                    <p>Navigating appointments, insurance, and local regulations in a new country can be overwhelming.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+Our Solution: Intelligent & Empathetic Healthcare
+IndiSanté leverages cutting-edge AI and a network of trusted medical professionals to provide seamless, culturally-aware healthcare access.
 
-    <!-- Solution & How It Works Section - Now includes Chat Demo -->
-    <section id="solution" class="py-16 bg-green-50 text-gray-700">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-green-800 mb-8">Our Solution: Intelligent & Empathetic Healthcare</h2>
-            <p class="text-lg max-w-4xl mx-auto mb-12">
-                IndiSanté leverages cutting-edge AI and a network of trusted medical professionals to provide seamless, culturally-aware healthcare access.
-            </p>
+How It Works: Simple Steps to Your Well-being
+1
+Smart Triage & Language Support (Demo Below)
+Start with our AI assistant via WhatsApp for initial symptom checks and instant translation. Try it out!
 
-            <!-- How It Works - 3 Step Flow -->
-            <h3 class="text-3xl font-bold text-green-700 mb-8 mt-12">How It Works: Simple Steps to Your Well-being</h3>
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <!-- Step 1: AI Triage & Language Support - Now with Interactive Demo -->
-                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-3xl font-bold mb-4">1</div>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Smart Triage & Language Support (Demo Below)</h4>
-                    <p class="mb-4">Start with our AI assistant via WhatsApp for initial symptom checks and instant translation. Try it out!</p>
-                    
-                    <!-- AI Chat Demo -->
-                    <div class="chat-container w-full">
-                        <div id="chatMessages" class="chat-messages">
-                            <div class="message-bubble ai-message">नमस्ते! मैं इंडीसेंटे का एआई सहायक हूँ। आपको कैसे मदद कर सकता हूँ? (Hello! I'm IndiSanté's AI assistant. How can I help you?)</div>
-                        </div>
-                        <div class="chat-input-area">
-                            <input type="text" id="chatInput" placeholder="Describe your symptoms..." class="flex-grow">
-                            <button id="sendChatBtn" class="brand-button ml-2">Send <span id="chatLoadingSpinner" class="chat-loading-spinner hidden"></span></button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Step 2: Booking UI Mockup -->
-                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-3xl font-bold mb-4">2</div>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Book Your Consultation</h4>
-                    <p>Easily find and book appointments with pre-vetted doctors, optimized for cross-border care and cultural understanding.</p>
-                    <a href="booking.html" class="block w-full">
-                        <img src="https://placehold.co/300x200/F3F4F6/1F2937?text=Doctor+Booking+UI" alt="Doctor Appointment Booking User Interface Mockup" class="w-full h-auto mt-4 rounded-md shadow-sm">
-                    </a>
-                    <p class="text-sm text-gray-500 mt-2">Example of Booking Interface</p>
-                </div>
-                <!-- Step 3: Consultation UI Mockup -->
-                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-3xl font-bold mb-4">3</div>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Receive Seamless Care</h4>
-                    <p>Engage in video consultations with real-time translation and cultural context notes, ensuring clear communication.</p>
-                    <img src="https://placehold.co/300x200/B2F5EA/00594B?text=Video+Consultation+UI" alt="Live Video Consultation User Interface Mockup with Translation Overlay" class="w-full h-auto mt-4 rounded-md shadow-sm">
-                    <p class="text-sm text-gray-500 mt-2">Example of Video Consultation with AI overlay</p>
-                </div>
-            </div>
-        </div>
-    </section>
+नमस्ते! मैं इंडीसेंटे का एआई सहायक हूँ। आपको कैसे मदद कर सकता हूँ? (Hello! I'm IndiSanté's AI assistant. How can I help you?)
+Describe your symptoms...
+ Send
+2
+Book Your Consultation
+Easily find and book appointments with pre-vetted doctors, optimized for cross-border care and cultural understanding.
 
-    <!-- Our Business Model Section -->
-    <section id="business-model" class="py-16 bg-white text-gray-700">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-green-800 mb-8">Our Business Model: Sustainable Growth, Clear Value</h2>
-            <p class="text-lg max-w-4xl mx-auto mb-12">
-                IndiSanté is built on a foundation that ensures accessibility for our users while creating a viable and scalable business for the future.
-            </p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="p-6 bg-indigo-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
-                    <span class="text-5xl mb-4">💰</span>
-                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">Direct-to-Consumer Fees</h3>
-                    <p>
-                        Users pay a transparent, affordable fee per consultation or for premium access to advanced AI features and concierge services.
-                    </p>
-                </div>
-                <div class="p-6 bg-teal-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
-                    <span class="text-5xl mb-4">🤝</span>
-                    <h3 class="text-xl font-semibold text-teal-700 mb-3">Partnerships with Institutions</h3>
-                    <p>
-                        Collaborating with universities, student organizations, and large employers to provide subsidized or bulk access for their communities.
-                    </p>
-                </div>
-                <div class="p-6 bg-orange-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
-                    <span class="text-5xl mb-4">📊</span>
-                    <h3 class="text-xl font-semibold text-orange-700 mb-3">Data-Driven Insights (Aggregated & Anonymized)</h3>
-                    <p>
-                        Offering anonymized and aggregated market insights to pharmaceutical companies, researchers, and policymakers (with strict ethical guidelines and user consent).
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+Doctor Appointment Booking User Interface Mockup
+Example of Booking Interface
 
-    <!-- Letters of Intent Section -->
-    <section id="letters-of-intent" class="py-16 bg-gray-50 text-gray-700">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-green-800 mb-8">Official Recognition: Letters of Intent</h2>
-            <p class="text-lg max-w-4xl mx-auto mb-12">
-                IndiSanté's vision is gaining traction and trust from leading institutions. We are proud to have received Letters of Intent from:
-            </p>
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="p-6 bg-green-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
-                    <img src="https://placehold.co/150x100/D4EDDA/1F7A33?text=Ministry+of+Health+Affairs+India+LOI" alt="Letter of Intent from Ministry of Health Affairs India" class="w-full h-auto mb-4 rounded-md shadow-sm">
-                    <h3 class="text-xl font-semibold text-green-700 mb-2">Ministry of Health Affairs, India</h3>
-                    <p class="text-center text-sm">
-                        This LOI signifies strong governmental interest and potential for future collaboration, underscoring our regulatory alignment and strategic importance for the Indian healthcare ecosystem.
-                    </p>
-                </div>
-                <div class="p-6 bg-green-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
-                    <img src="https://placehold.co/150x100/D4EDDA/1F7A33?text=Apollo+Foundation+LOI" alt="Letter of Intent from Apollo Foundation" class="w-full h-auto mb-4 rounded-md shadow-sm">
-                    <h3 class="text-xl font-semibold text-green-700 mb-2">Apollo Foundation</h3>
-                    <p class="text-center text-sm">
-                        Our LOI with Apollo Foundation highlights a potential partnership with a leading healthcare provider, enabling future clinical validation, expansion, and service integration.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+3
+Receive Seamless Care
+Engage in video consultations with real-time translation and cultural context notes, ensuring clear communication.
 
-    <!-- Who We Serve Section - Enhanced Details -->
-    <section id="who-we-serve" class="py-16 bg-white text-gray-700">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-green-800 mb-8">Who We Serve: Tailored Care for Every Need</h2>
-            <p class="text-lg max-w-4xl mx-auto mb-12">
-                For Indian students and migrants in Europe, accessing quality healthcare is often fraught with significant obstacles. Language barriers, cultural differences, and unfamiliar medical systems can lead to delayed care, misdiagnoses, and immense stress.
-            </p>
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="p-8 bg-green-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
-                    <span class="text-5xl mb-4">🎓</span> <h3 class="text-2xl font-semibold text-green-700 mb-3">Indian Students</h3>
-                    <p class="text-center mb-4">
-                        Struggling with language, unfamiliar healthcare systems, and seeking culturally appropriate support while studying abroad. We offer simplified digital access and essential guidance.
-                    </p>
-                </div>
-                <div class="p-8 bg-green-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
-                    <span class="text-5xl mb-4">👨‍👩‍👧‍👦</span> <h3 class="text-2xl font-semibold text-green-700 mb-3">Mid-Level Professionals & Families</h3>
-                    <p class="text-center mb-4">
-                        Need trusted, convenient doctors for themselves and their families in Europe or India. We enable remote consults with Indian GPs for familiar care, and provide support for local European specialists.
-                    </p>
-                </div>
-                <div class="p-8 bg-green-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
-                    <span class="text-5xl mb-4">🤰</span> <h3 class="text-2xl font-semibold text-green-700 mb-3">Migrant Mothers</h3>
-                    <p class="text-center mb-4">
-                        Need pediatric, mental health, and native-language support for their children, or for their own well-being. We guide them through complex family healthcare with dignity and understanding.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+Live Video Consultation User Interface Mockup with Translation Overlay
+Example of Video Consultation with AI overlay
 
-    <!-- Trust & Compliance Section -->
-    <section class="py-16 bg-gray-50 text-gray-700">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-green-800 mb-8">Our Commitment: Trust, Privacy, Compliance</h2>
-            <p class="text-lg max-w-4xl mx-auto mb-12">
-                We are building IndiSanté on a foundation of rigorous standards to ensure your peace of mind and access to safe, regulated care across borders.
-            </p>
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
-                    <span class="text-4xl text-green-500 mb-3">✅</span>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-2">GDPR-Ready Data Protection</h4>
-                    <p>Your personal and health data are protected by the highest European privacy standards, ensuring confidentiality and control.</p>
-                </div>
-                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
-                    <span class="text-4xl text-green-500 mb-3">✅</span>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Cross-Border Healthcare Compliance</h4>
-                    <p>We meticulously navigate international healthcare regulations to ensure seamless, legal, and ethical care delivery.</p>
-                </div>
-                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
-                    <span class="text-4xl text-green-500 mb-3">✅</span>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Built for India-France Regulation Sync</h4>
-                    <p>Our platform design anticipates and integrates with the complex regulatory frameworks for telemedicine between India and France.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+Our Business Model: Sustainable Growth, Clear Value
+IndiSanté is built on a foundation that ensures accessibility for our users while creating a viable and scalable business for the future.
 
-    <!-- Team Section -->
-    <section id="team" class="py-16 bg-green-100 text-gray-700">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-green-800 mb-8">Meet Our Visionary Team</h2>
-            <p class="text-lg max-w-4xl mx-auto mb-12">
-                Our diverse team combines deep expertise in healthcare, artificial intelligence, and cultural understanding, united by a passion to make a real difference.
-            </p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Founder 1 - Harika Yadav - Changed to placeholder for guaranteed visibility -->
-                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <img src="https://placehold.co/150x150/dbeafe/1e40af?text=Harika+Yadav" alt="Harika Yadav - Founder and CEO" class="w-36 h-36 rounded-full object-cover mb-4 shadow-md">
-                    <h3 class="text-xl font-semibold text-gray-800">Harika Yadav</h3>
-                    <p class="text-green-600 mb-2">Founder & CEO</p>
-                    <p class="text-sm">
-                        Visionary leader with an *International Business Degree from Paris School of Business* and an **Executive Master's in Pharmacology from Harvard Medical College**. Based in Paris, her unique blend of business acumen, scientific insight, and personal experience drives IndiSanté's mission to bridge global healthcare gaps.
-                    </p>
-                </div>
-                <!-- Head of AI Development - Krishi Telladalla -->
-                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <img src="https://placehold.co/150x150/dbeafe/1e40af?text=Krishi+Telladalla" alt="Krishi Telladalla - Head of AI Development" class="w-36 h-36 rounded-full object-cover mb-4 shadow-md">
-                    <h3 class="text-xl font-semibold text-gray-800">Krishi Telladalla</h3>
-                    <p class="text-green-600 mb-2">Head of AI Development</p>
-                    <p class="text-sm">
-                        An accomplished AI and NLP expert with an *International Business Degree* and 8 years in Paris. Leads technological innovation, focusing on **building robust, ethical AI models for medical triage and translation**, ensuring responsible and patient-centric solutions.
-                    </p>
-                </div>
-                <!-- Chief Medical Officer - Dr. Anya Sharma -->
-                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <img src="https://placehold.co/150x150/dbeafe/1e40af?text=Dr.+Anya+Sharma" alt="Dr. Anya Sharma - Chief Medical Officer" class="w-36 h-36 rounded-full object-cover mb-4 shadow-md">
-                    <h3 class="text-xl font-semibold text-gray-800">Dr. Anya Sharma</h3>
-                    <p class="text-green-600 mb-2">Chief Medical Officer</p>
-                    <p class="text-sm">
-                        Distinguished medical professional from *AIIMS**, overseeing IndiSanté's medical guidelines and clinician network. Her active involvement in **cross-cultural healthcare policymaking** ensures high-quality, culturally attuned patient care.
-                    </p>
-                </div>
-            </div>
-            <!-- Optional: Advisors Section -->
-            <h3 class="text-3xl font-bold text-green-700 mb-8 mt-12">Our Esteemed Advisors</h3>
-            <div class="flex flex-wrap justify-center gap-8 max-w-4xl mx-auto">
-                <div class="flex flex-col items-center">
-                    <img src="https://placehold.co/100x100/e0f2fe/1e40af?text=Prachi" alt="Prachi Pratap - Cross Border Legal Expert" class="w-24 h-24 rounded-full object-cover mb-2">
-                    <p class="font-semibold text-gray-800">Prachi Pratap</p>
-                    <p class="text-sm text-gray-600 text-center">Cross Border Legal Expert</p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <img src="https://placehold.co/100x100/e0f2fe/1e40af?text=Naga+Padma" alt="Naga Padma - IT Advisor" class="w-24 h-24 rounded-full object-cover mb-2">
-                    <p class="font-semibold text-gray-800">Naga Padma</p>
-                    <p class="text-sm text-gray-600 text-center">IT Advisor</p>
-                </div>
-                <!-- Add more advisors -->
-            </div>
-        </div>
-    </section>
+💰
+Direct-to-Consumer Fees
+Users pay a transparent, affordable fee per consultation or for premium access to advanced AI features and concierge services.
 
-    <!-- Get in Touch / Waitlist Form -->
-    <section id="contact" class="py-16 bg-white text-gray-700">
-        <div class="container mx-auto px-4 text-center max-w-2xl">
-            <h2 class="text-4xl font-bold text-green-800 mb-8">Ready for Seamless Healthcare?</h2>
-            <p class="text-lg mb-8">
-                Join our waitlist to be among the first to get access to IndiSanté. Fill out the form below:
-            </p>
-            <div class="google-form-container bg-green-50 p-4 rounded-lg shadow-md">
-                <iframe id="googleFormIframe" src="https://docs.google.com/forms/d/e/1FAIpQLScQshAONTDQGMjVSprroUIrT9MJDK8SUSaNcyCmhEkIHXhdbg/viewform?embedded=true"
-                        width="100%"
-                        height="800px"  
-                        frameborder="0"
-                        marginheight="0"
-                        marginwidth="0"
-                        title="IndiSanté Waitlist Form">
-                    Loading…
-                </iframe>
-                </div>
-            <p class="text-sm text-gray-600 mt-4">
-                Or reach us directly at: <a href="mailto:contact@indisante.com" class="text-green-600 hover:underline">contact@indisante.com</a>
-            </p>
-        </div>
-    </section>
+🤝
+Partnerships with Institutions
+Collaborating with universities, student organizations, and large employers to provide subsidized or bulk access for their communities.
 
-    <!-- Footer -->
-    <footer class="bg-emerald-800 text-white py-8 mt-12">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2025 IndiSanté. All rights reserved.</p>
-            <div class="flex justify-center space-x-6 text-sm mb-4">
-                <a href="privacy.html" class="hover:text-emerald-300 transition-colors">Privacy Policy</a>
-                <a href="terms.html" class="hover:text-emerald-300 transition-colors">Terms of Service</a>
-                <a href="mailto:contact@indisante.com" class="hover:text-emerald-300 transition-colors">Contact Us</a>
-            </div>
-            <div class="flex justify-center space-x-6 text-2xl">
-                <a href="https://www.linkedin.com/company/indisante-healthcare-sans-borders-285816370" target="_blank" aria-label="LinkedIn" class="hover:text-emerald-300 transition-colors">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://twitter.com/indisante" target="_blank" aria-label="Twitter" class="hover:text-emerald-300 transition-colors">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://www.instagram.com/indisante" target="_blank" aria-label="Instagram" class="hover:text-emerald-300 transition-colors">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                </div>
-        </div>
-    </footer>
+📊
+Data-Driven Insights (Aggregated & Anonymized)
+Offering anonymized and aggregated market insights to pharmaceutical companies, researchers, and policymakers (with strict ethical guidelines and user consent).
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const googleFormIframe = document.getElementById('googleFormIframe');
-            if (googleFormIframe) {
-                googleFormIframe.onload = function() {
-                    try {
-                        if (googleFormIframe.contentWindow && googleFormIframe.contentWindow.document.body) {
-                            googleFormIframe.style.height = googleFormIframe.contentWindow.document.body.scrollHeight + 'px';
-                        }
-                    } catch (e) {
-                        console.warn("Could not dynamically resize Google Form iframe due to cross-origin restrictions or other error:", e);
-                        googleFormIframe.style.height = '800px'; 
-                    }
-                };
-            }
+Official Recognition: Letters of Intent
+IndiSanté's vision is gaining traction and trust from leading institutions. We are proud to have received Letters of Intent from:
 
-            // --- Chat Demo Logic ---
-            const chatInput = document.getElementById('chatInput');
-            const sendChatBtn = document.getElementById('sendChatBtn');
-            const chatMessages = document.getElementById('chatMessages');
-            const chatLoadingSpinner = document.getElementById('chatLoadingSpinner');
+Letter of Intent from Ministry of Health Affairs India
+Ministry of Health Affairs, India
+This LOI signifies strong governmental interest and potential for future collaboration, underscoring our regulatory alignment and strategic importance for the Indian healthcare ecosystem.
 
-            function addMessage(sender, text) {
-                const messageDiv = document.createElement('div');
-                messageDiv.classList.add('message-bubble');
-                if (sender === 'user') {
-                    messageDiv.classList.add('user-message');
-                } else {
-                    messageDiv.classList.add('ai-message');
-                }
-                messageDiv.textContent = text;
-                chatMessages.appendChild(messageDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to bottom
-            }
+Letter of Intent from Apollo Foundation
+Apollo Foundation
+Our LOI with Apollo Foundation highlights a potential partnership with a leading healthcare provider, enabling future clinical validation, expansion, and service integration.
 
-            async function getAiResponse(userInput) {
-                chatLoadingSpinner.classList.remove('hidden');
-                sendChatBtn.disabled = true;
+Who We Serve: Tailored Care for Every Need
+For Indian students and migrants in Europe, accessing quality healthcare is often fraught with significant obstacles. Language barriers, cultural differences, and unfamiliar medical systems can lead to delayed care, misdiagnoses, and immense stress.
 
-                const prompt = `You are a medical triage AI for a telemedicine service called IndiSanté, specializing in Indian patients in Europe. A patient has just described their symptom: '${userInput}'. Provide a concise (1-2 sentences) simulated triage response, acknowledging cultural context if applicable, and suggest the next step (e.g., 'This sounds like X. Please connect with a general practitioner.'). Also, provide a short translation of your response into Hindi (in Devanagari script). Ensure the response is helpful and empathetic.`;
+🎓
+Indian Students
+Struggling with language, unfamiliar healthcare systems, and seeking culturally appropriate support while studying abroad. We offer simplified digital access and essential guidance.
 
-                const chatHistory = [];
-                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-                const payload = { contents: chatHistory };
-                const apiKey = ""; // Canvas will provide this at runtime for Gemini
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+👨‍👩‍👧‍👦
+Mid-Level Professionals & Families
+Need trusted, convenient doctors for themselves and their families in Europe or India. We enable remote consults with Indian GPs for familiar care, and provide support for local European specialists.
 
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    const result = await response.json();
+🤰
+Migrant Mothers
+Need pediatric, mental health, and native-language support for their children, or for their own well-being. We guide them through complex family healthcare with dignity and understanding.
 
-                    if (result.candidates && result.candidates.length > 0 &&
-                        result.candidates[0].content && result.candidates[0].content.parts &&
-                        result.candidates[0].content.parts.length > 0) {
-                        return result.candidates[0].content.parts[0].text;
-                    } else {
-                        console.error('AI response failed: Unexpected response structure or missing content.');
-                        return "I'm sorry, I couldn't process that. Can you please rephrase?";
-                    }
-                } catch (error) {
-                    console.error('Error fetching AI response:', error);
-                    return "There was an error connecting to our AI. Please try again later.";
-                } finally {
-                    chatLoadingSpinner.classList.add('hidden');
-                    sendChatBtn.disabled = false;
-                }
-            }
+Our Commitment: Trust, Privacy, Compliance
+We are building IndiSanté on a foundation of rigorous standards to ensure your peace of mind and access to safe, regulated care across borders.
 
-            sendChatBtn.addEventListener('click', async () => {
-                const userInput = chatInput.value.trim();
-                if (userInput) {
-                    addMessage('user', userInput);
-                    chatInput.value = ''; // Clear input
+✅
+GDPR-Ready Data Protection
+Your personal and health data are protected by the highest European privacy standards, ensuring confidentiality and control.
 
-                    const aiResponse = await getAiResponse(userInput);
-                    addMessage('ai', aiResponse);
-                }
-            });
+✅
+Cross-Border Healthcare Compliance
+We meticulously navigate international healthcare regulations to ensure seamless, legal, and ethical care delivery.
 
-            chatInput.addEventListener('keypress', (event) => {
-                if (event.key === 'Enter') {
-                    sendChatBtn.click();
-                }
-            });
-            // --- End Chat Demo Logic ---
-        });
-    </script>
+✅
+Built for India-France Regulation Sync
+Our platform design anticipates and integrates with the complex regulatory frameworks for telemedicine between India and France.
 
-</body>
-</html>
+Meet Our Visionary Team
+Our diverse team combines deep expertise in healthcare, artificial intelligence, and cultural understanding, united by a passion to make a real difference.
+
+Harika Yadav - Founder and CEO
+Harika Yadav
+Founder & CEO
+
+Visionary leader with an *International Business Degree from Paris School of Business* and an **Executive Master's in Pharmacology from Harvard Medical College**. Based in Paris, her unique blend of business acumen, scientific insight, and personal experience drives IndiSanté's mission to bridge global healthcare gaps.
+
+Krishi Telladalla - Head of AI Development
+Krishi Telladalla
+Head of AI Development
+
+An accomplished AI and NLP expert with an *International Business Degree* and 8 years in Paris. Leads technological innovation, focusing on **building robust, ethical AI models for medical triage and translation**, ensuring responsible and patient-centric solutions.
+
+Dr. Anya Sharma - Chief Medical Officer
+Dr. Anya Sharma
+Chief Medical Officer
+
+Distinguished medical professional from *AIIMS**, overseeing IndiSanté's medical guidelines and clinician network. Her active involvement in **cross-cultural healthcare policymaking** ensures high-quality, culturally attuned patient care.
+
+Our Esteemed Advisors
+Prachi Pratap - Cross Border Legal Expert
+Prachi Pratap
+
+Cross Border Legal Expert
+
+Naga Padma - IT Advisor
+Naga Padma
+
+IT Advisor
+
+Ready for Seamless Healthcare?
+Join our waitlist to be among the first to get access to IndiSanté. Fill out the form below:
+
+
+Or reach us directly at: contact@indisante.com
+
+© 2025 IndiSanté. All rights reserved.
+
+Privacy Policy
+Terms of Service
+Contact Us
