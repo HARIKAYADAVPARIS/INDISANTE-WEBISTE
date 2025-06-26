@@ -129,7 +129,7 @@
         }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
     <!-- Header / Navigation Bar -->
     <header class="bg-emerald-800 shadow-sm py-4">
@@ -285,13 +285,13 @@
                     <p class="text-center text-sm mb-2">**Market:** €210M annual potential</p>
                     <p class="text-center text-xs text-gray-600">Deep cultural focus, leveraging existing community networks.</p>
                 </div>
-                <!-- Phase 2 -->
+                <!-- Phase 2 (Updated for Korean and Japanese ONLY) -->
                 <div class="flex flex-col items-center p-6 bg-teal-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <span class="text-5xl mb-4">🌏</span>
-                    <h3 class="text-xl font-semibold text-teal-700 mb-2">Phase 2: South Asian Communities</h3>
-                    <p class="text-center text-sm mb-2">**Target:** 12M people (Pakistani, Bangladeshi, Sri Lankan in EU)</p>
-                    <p class="text-center text-sm mb-2">**Market:** €600M annual potential</p>
-                    <p class="text-center text-xs text-gray-600">Expand language support and cultural adaptation frameworks.</p>
+                    <span class="text-5xl mb-4">🇰🇷🇯🇵</span>
+                    <h3 class="text-xl font-semibold text-teal-700 mb-2">Phase 2: East Asian Communities (EU)</h3>
+                    <p class="text-center text-sm mb-2">**Target:** ~0.7M people (Korean & Japanese in EU)</p>
+                    <p class="text-center text-sm mb-2">**Market:** ~€35M annual potential</p>
+                    <p class="text-center text-xs text-gray-600">Strategic focus on high-potential, culturally distinct groups within Europe.</p>
                 </div>
                 <!-- Phase 3 -->
                 <div class="flex flex-col items-center p-6 bg-orange-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
@@ -301,12 +301,12 @@
                     <p class="text-center text-sm mb-2">**Market:** €2.1B annual potential</p>
                     <p class="text-center text-xs text-gray-600">Generalize platform, onboard multi-cultural professionals.</p>
                 </div>
-                <!-- Phase 4 -->
+                <!-- Phase 4 (Adjusted from previous global expansion, now focusing on broader non-EU Asian diasporas if not covered by Phase 2) -->
                 <div class="flex flex-col items-center p-6 bg-purple-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                     <span class="text-5xl mb-4">🌎</span>
-                    <h3 class="text-xl font-semibold text-purple-700 mb-2">Phase 4: Global Immigrant Health</h3>
-                    <p class="text-center text-sm mb-2">**Vision:** Expand to North America (US, Canada) and other high-density immigrant markets.</p>
-                    <p class="text-center text-xs text-gray-600">Replicate proven model for massive global scalability.</p>
+                    <h3 class="text-xl font-semibold text-purple-700 mb-2">Phase 4: Global Immigrant Health Expansion</h3>
+                    <p class="text-center text-sm mb-2">**Vision:** Replicate model in new high-density immigrant markets globally (e.g., North America, broader Asian diasporas).</p>
+                    <p class="text-center text-xs text-gray-600">Leverage proven success for massive global scalability.</p>
                 </div>
             </div>
         </div>
@@ -561,7 +561,7 @@
                         console.error('AI response failed: Unexpected response structure or missing content.');
                         return "I'm sorry, I couldn't process that. Can you please rephrase?";
                     }
-                } catch (error) {
+                    } catch (error) {
                     console.error('Error fetching AI response:', error);
                     return "There was an error connecting to our AI. Please try again later.";
                 } finally {
