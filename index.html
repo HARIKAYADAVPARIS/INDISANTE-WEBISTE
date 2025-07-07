@@ -84,7 +84,7 @@
         /* New: Styles for the Chat Demo */
         .chat-container {
             @apply bg-white rounded-lg shadow-md p-4 flex flex-col;
-            height: 450px; /* Fixed height for chat window */
+            height: 500px; /* Increased height for chat window + disclaimer */
             max-width: 400px; /* Max width for chat window */
             margin: 0 auto;
             border: 1px solid #e0e0e0;
@@ -154,10 +154,10 @@
 
     <header class="bg-emerald-800 shadow-sm py-4">
         <div class="container mx-auto px-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <img src="https://placehold.co/100x32/00806A/FFFFFF?text=IndiSante" alt="IndiSanté Logo" class="h-8 w-auto mr-2 rounded-md">
-                <a href="#" class="text-2xl font-bold text-white">IndiSanté</a>
-            </div>
+            <a href="#" class="flex items-center space-x-3">
+                <img src="https://raw.githubusercontent.com/HARIKAYADAVPARIS/INDISANTE-WEBISTE/main/IndiSante%CC%81%20Logo_%20Global%20Healthcare%20Connection.png" alt="IndiSanté Logo" class="h-10 w-auto">
+                <span class="text-2xl font-bold text-white">IndiSanté</span>
+            </a>
             <nav>
                 <ul class="flex space-x-6 text-white font-medium">
                     <li><a href="#problem" class="hover:text-emerald-300 transition-colors">Problem</a></li>
@@ -212,6 +212,35 @@
         </div>
     </section>
 
+    <section id="traction" class="py-16 bg-white text-gray-700">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-green-800 mb-8">Our Progress & Momentum</h2>
+            <p class="text-lg max-w-4xl mx-auto mb-12">
+                The response from the community has been overwhelmingly positive. We're excited to share our progress as we work towards our launch.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                
+                <div class="p-8 bg-green-50 rounded-lg shadow-md flex flex-col items-center justify-center hover:shadow-xl transition-shadow duration-300">
+                    <p class="text-5xl font-extrabold text-green-700">58</p>
+                    <p class="text-xl font-semibold text-gray-800 mt-2">Early Sign-ups</p>
+                    <p class="text-sm text-gray-600 mt-2">validating the clear and immediate need for our service.</p>
+                </div>
+
+                <div class="p-8 bg-green-50 rounded-lg shadow-md flex flex-col items-center justify-center hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-handshake text-5xl text-green-700"></i>
+                    <p class="text-xl font-semibold text-gray-800 mt-3">Discussions Initiated</p>
+                    <p class="text-sm text-gray-600 mt-2">with key health organizations to establish future pilot programs.</p>
+                </div>
+
+                <div class="p-8 bg-green-50 rounded-lg shadow-md flex flex-col items-center justify-center hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-users text-5xl text-green-700"></i>
+                    <p class="text-xl font-semibold text-gray-800 mt-3">User-Centric Approach</p>
+                    <p class="text-sm text-gray-600 mt-2">Actively engaging with our early users to build a truly helpful platform.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
     <section id="problem" class="py-16 bg-gray-50 text-gray-700">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold text-green-800 mb-8">The Challenge: Navigating Healthcare Abroad for Indian Migrants</h2>
@@ -246,7 +275,7 @@
                 <h3 class="text-2xl font-bold text-green-700 mb-5">Trusted by Key Partners</h3>
                 <div class="flex flex-wrap justify-center items-center gap-8">
                     <div class="flex flex-col items-center">
-                        <img src="https://placehold.co/100x40/00806A/FFFFFF?text=MOH+India" alt="Ministry of Health Affairs India Logo" class="h-10 w-auto object-contain mb-2 rounded-md">
+                        <img src="https://raw.githubusercontent.com/HARIKAYADAVPARIS/INDISANTE-WEBISTE/main/35244525_968755186617222_2663672583072776192_n.png" alt="Ministry of Health Affairs India Logo" class="h-10 w-auto object-contain mb-2">
                         <p class="text-sm text-gray-600">Ministry of Health Affairs, India</p>
                     </div>
                     <div class="flex flex-col items-center">
@@ -264,12 +293,11 @@
                 </div>
             </div>
             <h3 class="text-3xl font-bold text-green-700 mb-8 mt-12">How It Works: Simple Steps to Your Well-being</h3>
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto text-left">
                 <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                     <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-3xl font-bold mb-4">1</div>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Smart Triage & Language Support (Demo Below)</h4>
-                    <p class="mb-4">Start with our AI assistant via WhatsApp for initial symptom checks and instant translation. Try it out!</p>
-                    
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2 text-center">Smart Triage & Language Support</h4>
+                    <p class="mb-4 text-center">Start with our AI assistant for initial symptom checks and instant translation.</p>
                     <div class="chat-container w-full">
                         <div id="chatMessages" class="chat-messages">
                             <div class="message-bubble ai-message">नमस्ते! मैं इंडीसेंटे का एआई सहायक हूँ। आपको कैसे मदद कर सकता हूँ? (Hello! I'm IndiSanté's AI assistant. How can I help you?)</div>
@@ -278,23 +306,73 @@
                             <input type="text" id="chatInput" placeholder="Describe your symptoms..." class="flex-grow">
                             <button id="sendChatBtn" class="brand-button ml-2">Send <span id="chatLoadingSpinner" class="chat-loading-spinner hidden"></span></button>
                         </div>
+                        <p class="text-xs text-gray-500 mt-3 text-center px-2">
+                            <strong>Disclaimer:</strong> This AI is an informational triage tool and is not a substitute for professional medical diagnosis.
+                        </p>
                     </div>
                 </div>
                 <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                     <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-3xl font-bold mb-4">2</div>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Book Your Consultation with a Culturally-Sensitive Doctor</h4>
-                    <p>Easily find and book appointments with pre-vetted doctors, optimized for **cross-border care** and cultural understanding. Find a **Hindi-speaking doctor** or one who understands your background.</p>
-                    <a href="booking.html" class="block w-full">
-                        <img src="https://placehold.co/300x200/F3F4F6/1F2937?text=Doctor+Booking+UI" alt="IndiSanté doctor booking interface showing available slots with culturally-sensitive, Hindi-speaking doctors in Europe" class="w-full h-auto mt-4 rounded-md shadow-sm">
-                    </a>
-                    <p class="text-sm text-gray-500 mt-2">Example of Booking Interface</p>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2 text-center">Book Your Consultation</h4>
+                    <p class="mb-4 text-center">Easily find and book appointments with pre-vetted, culturally-sensitive doctors.</p>
+                    <div class="w-full max-w-sm mx-auto bg-gray-50 p-4 rounded-lg border border-gray-200">
+                        <h5 class="text-lg font-bold text-gray-800 text-center mb-3">Book a Consultation</h5>
+                        <div class="flex items-center bg-white p-3 rounded-lg shadow-sm">
+                            <img src="https://raw.githubusercontent.com/HARIKAYADAVPARIS/INDISANTE-WEBISTE/main/ChatGPT%20Image%20Jun%2021%2C%202025%2C%2008_41_27%20AM.jpg" alt="Dr. Anya Sharma" class="w-16 h-16 rounded-full object-cover">
+                            <div class="ml-3">
+                                <h6 class="font-semibold text-gray-900">Dr. Anya Sharma</h6>
+                                <p class="text-sm text-gray-600">General Practitioner</p>
+                                <p class="text-xs text-gray-500 mt-1">🇮🇳 English, Hindi, Punjabi</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h6 class="font-semibold text-gray-700 mb-2 text-sm">Select a date</h6>
+                            <div class="grid grid-cols-7 gap-1 text-center text-xs">
+                                <span class="text-gray-400">Mo</span><span class="text-gray-400">Tu</span><span class="text-gray-400">We</span><span class="text-gray-400">Th</span><span class="text-gray-400">Fr</span><span class="text-gray-400">Sa</span><span class="text-gray-400">Su</span>
+                                <span class="p-1"></span><span class="p-1"></span>
+                                <span class="p-1 rounded-full hover:bg-emerald-100 cursor-pointer">1</span>
+                                <span class="p-1 rounded-full hover:bg-emerald-100 cursor-pointer">2</span>
+                                <span class="p-1 rounded-full bg-emerald-500 text-white cursor-pointer">3</span>
+                                <span class="p-1 rounded-full hover:bg-emerald-100 cursor-pointer">4</span>
+                                <span class="p-1 rounded-full hover:bg-emerald-100 cursor-pointer">5</span>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h6 class="font-semibold text-gray-700 mb-2 text-sm">Select a time</h6>
+                            <div class="grid grid-cols-3 gap-2 text-center text-sm">
+                                <span class="p-2 border rounded-md hover:bg-gray-100 cursor-pointer">10:00</span>
+                                <span class="p-2 border rounded-md bg-emerald-600 text-white cursor-pointer">10:30</span>
+                                <span class="p-2 border rounded-md hover:bg-gray-100 cursor-pointer">11:00</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-emerald-600 text-white font-bold py-2 px-4 rounded-lg mt-4 hover:bg-emerald-700">Confirm Booking</button>
+                    </div>
                 </div>
                 <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                     <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-3xl font-bold mb-4">3</div>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Receive Seamless Care via Telemedicine</h4>
-                    <p>Engage in video consultations with real-time translation and cultural context notes, ensuring clear communication for **telemedicine for Indian migrants**.</p>
-                    <img src="https://placehold.co/300x200/B2F5EA/00594B?text=Video+Consultation+UI" alt="IndiSanté video consultation screen with AI-powered real-time translation for a patient and doctor in Europe" class="w-full h-auto mt-4 rounded-md shadow-sm">
-                    <p class="text-sm text-gray-500 mt-2">Example of Video Consultation with AI overlay</p>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2 text-center">Receive Seamless Care</h4>
+                    <p class="mb-4 text-center">Engage in video calls with real-time translation and cultural context notes.</p>
+                    <div class="w-full max-w-sm mx-auto bg-gray-900 p-2 rounded-lg border border-gray-700 text-white">
+                        <div class="relative bg-gray-800 rounded-md">
+                            <img src="https://raw.githubusercontent.com/HARIKAYADAVPARIS/INDISANTE-WEBISTE/main/ChatGPT%20Image%20Jun%2021%2C%202025%2C%2008_41_27%20AM.jpg" alt="Doctor on video call" class="w-full h-40 object-cover rounded-md opacity-90">
+                            <div class="absolute bottom-2 right-2 w-16 h-20 bg-gray-700 rounded-md border-2 border-white">
+                                 <img src="https://raw.githubusercontent.com/HARIKAYADAVPARIS/INDISANTE-WEBISTE/main/IMG_3005.jpeg" alt="Patient on video call" class="w-full h-full object-cover rounded-sm">
+                            </div>
+                        </div>
+                        <div class="p-2 bg-gray-800 rounded-md mt-2">
+                            <h6 class="font-semibold text-emerald-400 text-xs">LIVE TRANSCRIPT & SUMMARY</h6>
+                            <div class="text-xs mt-1 h-16 overflow-y-hidden text-gray-300">
+                                <p><strong class="text-white">Doctor:</strong> How can I help you today?</p>
+                                <p><strong class="text-white">Patient:</strong> नमस्ते, मुझे सिरदर्द है।</p>
+                                <p class="text-emerald-300">Translation: Hello, I have a headache.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-center items-center space-x-4 mt-2 py-2">
+                             <button class="text-gray-300 hover:text-white"><i class="fas fa-microphone-slash"></i></button>
+                             <button class="bg-red-600 text-white rounded-full p-3 hover:bg-red-700"><i class="fas fa-phone-slash"></i></button>
+                             <button class="text-gray-300 hover:text-white"><i class="fas fa-video-slash"></i></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -483,8 +561,16 @@
                         title="IndiSanté Waitlist Form">
                     Loading…
                 </iframe>
-                </div>
-            <p class="text-sm text-gray-600 mt-4">
+            </div>
+            <div class="mt-6 text-left max-w-lg mx-auto">
+                <label for="consent-checkbox" class="flex items-start">
+                    <input type="checkbox" id="consent-checkbox" name="consent-checkbox" class="h-5 w-5 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500 mt-1">
+                    <span class="ml-3 text-sm text-gray-600">
+                        By checking this box, you agree to be contacted by IndiSanté and acknowledge that you have read and understood our <a href="privacy.html" class="text-green-600 hover:underline">Privacy Policy</a> and <a href="terms.html" class="text-green-600 hover:underline">Terms of Service</a>.
+                    </span>
+                </label>
+            </div>
+            <p class="text-sm text-gray-600 mt-8">
                 Or reach us directly at: <a href="mailto:contact@indisante.com" class="text-green-600 hover:underline">contact@indisante.com</a>
             </p>
         </div>
@@ -492,6 +578,7 @@
 
     <footer class="bg-emerald-800 text-white py-8 mt-12">
         <div class="container mx-auto px-4 text-center">
+            <img src="https://raw.githubusercontent.com/HARIKAYADAVPARIS/INDISANTE-WEBISTE/main/IndiSante%CC%81%20Logo_%20Global%20Healthcare%20Connection.png" alt="IndiSanté Logo" class="h-12 w-auto mx-auto mb-4">
             <p>© 2025 IndiSanté. All rights reserved.</p>
             <div class="flex justify-center space-x-6 text-sm mb-4">
                 <a href="privacy.html" class="hover:text-emerald-300 transition-colors">Privacy Policy</a>
