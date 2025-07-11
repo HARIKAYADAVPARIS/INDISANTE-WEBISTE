@@ -37,8 +37,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--primary-brand-color); /* Changed to emerald green */
-            color: var(--text-light); /* Changed to lighter font (white) */
+            color: var(--text-dark);
         }
         
         .brand-primary-bg {
@@ -56,8 +55,16 @@
             background-color: var(--primary-brand-dark); /* Darker emerald on hover */
         }
         .hero-gradient {
-            /* Changed to a dark emerald gradient */
             background-image: linear-gradient(to bottom right, var(--bg-gradient-start-dark), var(--bg-gradient-end-dark));
+            color: var(--text-light);
+        }
+        
+        /* Enhanced hover effects for cards */
+        .interactive-card {
+            @apply transition-all duration-300;
+        }
+        .interactive-card:hover {
+            @apply shadow-xl -translate-y-1;
         }
 
         /* Styles for Google Form embed to make it responsive */
@@ -99,8 +106,7 @@
             scroll-behavior: smooth;
         }
         .message-bubble {
-            @apply p-2 rounded-lg mb-2 max-w-[80%];
-            word-wrap: break-word;
+            @apply p-2 rounded-lg mb-2 max-w-[80%] break-words;
         }
         .user-message {
             @apply bg-blue-100 text-blue-800 self-end;
@@ -110,6 +116,14 @@
             @apply bg-green-100 text-green-800 self-start;
             border-bottom-left-radius: 0;
         }
+        .typing-indicator {
+            @apply self-start flex items-center space-x-1 p-2 mb-2;
+        }
+        .typing-indicator span {
+            @apply w-2 h-2 bg-green-200 rounded-full animate-bounce;
+        }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.1s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.2s; }
         .chat-input-area {
             @apply flex items-center;
         }
@@ -155,10 +169,10 @@
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="bg-gray-50">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VCGQS54"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <header class="bg-emerald-800 shadow-sm py-4">
+    <header class="bg-emerald-800 text-white shadow-sm py-4">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <a href="#" class="flex items-center space-x-3">
                 <img src="https://raw.githubusercontent.com/HARIKAYADAVPARIS/INDISANTE-WEBISTE/main/IndiSante%CC%81%20Logo_%20Global%20Healthcare%20Connection.png" alt="IndiSanté Logo" class="h-10 w-auto">
@@ -202,15 +216,15 @@
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-green-800 mb-8">A Rapidly Expanding Market</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-6 bg-green-50 rounded-lg shadow-md flex flex-col items-center">
+                <div class="p-6 bg-green-50 rounded-lg shadow-md interactive-card">
                     <p class="text-5xl font-extrabold text-green-700">8%<span class="text-2xl ml-1">%</span></p>
                     <p class="text-lg font-semibold text-gray-800 mt-2">Annual EU Immigration Growth</p>
                 </div>
-                <div class="p-6 bg-green-50 rounded-lg shadow-md flex flex-col items-center">
+                <div class="p-6 bg-green-50 rounded-lg shadow-md interactive-card">
                     <p class="text-5xl font-extrabold text-green-700">15%<span class="text-2xl ml-1">%</span></p>
                     <p class="text-lg font-semibold text-gray-800 mt-2">Annual Telehealth Market Growth</p>
                 </div>
-                <div class="p-6 bg-green-50 rounded-lg shadow-md flex flex-col items-center">
+                <div class="p-6 bg-green-50 rounded-lg shadow-md interactive-card">
                     <p class="text-5xl font-extrabold text-green-700">€500M</p>
                     <p class="text-lg font-semibold text-gray-800 mt-2">Cultural Healthcare Market (2027 Proj.)</p>
                 </div>
@@ -225,25 +239,21 @@
                 The response from the community has been overwhelmingly positive. We're excited to share our progress as we work towards our launch.
             </p>
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                
-                <div class="p-8 bg-green-50 rounded-lg shadow-md flex flex-col items-center justify-center hover:shadow-xl transition-shadow duration-300">
+                <div class="p-8 bg-green-50 rounded-lg shadow-md flex flex-col items-center justify-center interactive-card">
                     <p class="text-5xl font-extrabold text-green-700">58</p>
                     <p class="text-xl font-semibold text-gray-800 mt-2">Early Sign-ups</p>
                     <p class="text-sm text-gray-600 mt-2">validating the clear and immediate need for our service.</p>
                 </div>
-
-                <div class="p-8 bg-green-50 rounded-lg shadow-md flex flex-col items-center justify-center hover:shadow-xl transition-shadow duration-300">
+                <div class="p-8 bg-green-50 rounded-lg shadow-md flex flex-col items-center justify-center interactive-card">
                     <i class="fas fa-handshake text-5xl text-green-700"></i>
                     <p class="text-xl font-semibold text-gray-800 mt-3">Discussions Initiated</p>
                     <p class="text-sm text-gray-600 mt-2">with key health organizations to establish future pilot programs.</p>
                 </div>
-
-                <div class="p-8 bg-green-50 rounded-lg shadow-md flex flex-col items-center justify-center hover:shadow-xl transition-shadow duration-300">
+                <div class="p-8 bg-green-50 rounded-lg shadow-md flex flex-col items-center justify-center interactive-card">
                     <i class="fas fa-users text-5xl text-green-700"></i>
                     <p class="text-xl font-semibold text-gray-800 mt-3">User-Centric Approach</p>
                     <p class="text-sm text-gray-600 mt-2">Actively engaging with our early users to build a truly helpful platform.</p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -254,15 +264,15 @@
                 For the **35 million non-European immigrants in the EU**, accessing quality healthcare is often fraught with significant obstacles. **Indian students and migrants in Europe** frequently face unique challenges due to unfamiliar systems, leading to delayed care, misdiagnoses, and immense stress.
             </p>
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="p-6 bg-red-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div class="p-6 bg-red-50 rounded-lg shadow-md interactive-card">
                     <h3 class="text-xl font-semibold text-red-700 mb-3">Overcoming Language Barriers</h3>
                     <p>Many **Indian migrants in Europe** find it difficult communicating symptoms and understanding medical advice in a foreign language. This can lead to frustration, potential errors, and a feeling of being unheard during a **doctor visit in Europe**.</p>
                 </div>
-                <div class="p-6 bg-yellow-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div class="p-6 bg-yellow-50 rounded-lg shadow-md interactive-card">
                     <h3 class="text-xl font-semibold text-yellow-700 mb-3">Bridging Cultural Misunderstandings</h3>
                     <p>There's a significant **cultural gap in healthcare Europe**. A lack of culturally sensitive care and differing expectations about medical practices can cause misunderstandings and discomfort for **Indian diaspora** members seeking treatment.</p>
                 </div>
-                <div class="p-6 bg-green-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div class="p-6 bg-green-50 rounded-lg shadow-md interactive-card">
                     <h3 class="text-xl font-semibold text-green-700 mb-3">Simplifying Complex Healthcare Systems</h3>
                     <p>For newcomers, **navigating complex European healthcare systems** can be overwhelming. Understanding appointments, local regulations, and **health insurance for expats** adds significant stress when you're already unwell. Find out how IndiSanté helps. </p>
                 </div>
@@ -277,6 +287,22 @@
                 IndiSanté leverages cutting-edge AI and a network of trusted medical professionals to provide seamless, culturally-aware healthcare access.
             </p>
 
+            <div class="my-10 bg-white p-8 rounded-lg shadow-lg max-w-3xl mx-auto border border-emerald-200">
+                <div class="flex flex-col md:flex-row items-center text-center md:text-left">
+                    <div class="flex-shrink-0 mb-6 md:mb-0 md:mr-8">
+                         <i class="fas fa-pills text-6xl text-emerald-500"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800">Try Our Prescription Translator</h3>
+                        <p class="text-md text-gray-600 mt-2">Confused by a foreign prescription? Our AI-powered tool helps you understand key details in plain English and your native language. Try the interactive demo now.</p>
+                    </div>
+                     <div class="mt-6 md:mt-0 md:ml-8 flex-shrink-0">
+                        <a href="translator.html" class="brand-button font-bold py-3 px-6 rounded-full text-lg shadow-md transform hover:scale-105 transition-transform inline-block">
+                            Launch Tool
+                        </a>
+                    </div>
+                </div>
+            </div>
             <div class="my-10 bg-white p-6 rounded-lg shadow-md max-w-3xl mx-auto">
                 <h3 class="text-2xl font-bold text-green-700 mb-5">Trusted by Key Partners</h3>
                 <div class="flex flex-wrap justify-center items-center gap-8">
@@ -300,7 +326,7 @@
             </div>
             <h3 class="text-3xl font-bold text-green-700 mb-8 mt-12">How It Works: Simple Steps to Your Well-being</h3>
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto text-left">
-                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md interactive-card">
                     <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-3xl font-bold mb-4">1</div>
                     <h4 class="text-xl font-semibold text-gray-800 mb-2 text-center">Smart Triage & Language Support</h4>
                     <p class="mb-4 text-center">Start with our AI assistant for initial symptom checks and instant translation.</p>
@@ -317,11 +343,11 @@
                         </p>
                     </div>
                 </div>
-                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md interactive-card">
                     <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-3xl font-bold mb-4">2</div>
                     <h4 class="text-xl font-semibold text-gray-800 mb-2 text-center">Book Your Consultation</h4>
                     <p class="mb-4 text-center">Easily find and book appointments with pre-vetted, culturally-sensitive doctors.</p>
-                    <div class="w-full max-w-sm mx-auto bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <div id="booking-demo" class="w-full max-w-sm mx-auto bg-gray-50 p-4 rounded-lg border border-gray-200">
                         <h5 class="text-lg font-bold text-gray-800 text-center mb-3">Book a Consultation</h5>
                         <div class="flex items-center bg-white p-3 rounded-lg shadow-sm">
                             <img src="https://raw.githubusercontent.com/HARIKAYADAVPARIS/INDISANTE-WEBISTE/main/ChatGPT%20Image%20Jun%2021%2C%202025%2C%2008_41_27%20AM.jpg" alt="Dr. Anya Sharma" class="w-16 h-16 rounded-full object-cover">
@@ -333,32 +359,35 @@
                         </div>
                         <div class="mt-4">
                             <h6 class="font-semibold text-gray-700 mb-2 text-sm">Select a date</h6>
-                            <div class="grid grid-cols-7 gap-1 text-center text-xs">
+                            <div id="booking-dates" class="grid grid-cols-7 gap-1 text-center text-xs">
                                 <span class="text-gray-400">Mo</span><span class="text-gray-400">Tu</span><span class="text-gray-400">We</span><span class="text-gray-400">Th</span><span class="text-gray-400">Fr</span><span class="text-gray-400">Sa</span><span class="text-gray-400">Su</span>
                                 <span class="p-1"></span><span class="p-1"></span>
-                                <span class="p-1 rounded-full hover:bg-emerald-100 cursor-pointer">1</span>
-                                <span class="p-1 rounded-full hover:bg-emerald-100 cursor-pointer">2</span>
-                                <span class="p-1 rounded-full bg-emerald-500 text-white cursor-pointer">3</span>
-                                <span class="p-1 rounded-full hover:bg-emerald-100 cursor-pointer">4</span>
-                                <span class="p-1 rounded-full hover:bg-emerald-100 cursor-pointer">5</span>
+                                <span data-day="1" class="p-1 rounded-full hover:bg-emerald-100 cursor-pointer">1</span>
+                                <span data-day="2" class="p-1 rounded-full hover:bg-emerald-100 cursor-pointer">2</span>
+                                <span data-day="3" class="p-1 rounded-full bg-emerald-500 text-white cursor-pointer">3</span>
+                                <span data-day="4" class="p-1 rounded-full hover:bg-emerald-100 cursor-pointer">4</span>
+                                <span data-day="5" class="p-1 rounded-full hover:bg-emerald-100 cursor-pointer">5</span>
                             </div>
                         </div>
                         <div class="mt-4">
                             <h6 class="font-semibold text-gray-700 mb-2 text-sm">Select a time</h6>
-                            <div class="grid grid-cols-3 gap-2 text-center text-sm">
+                            <div id="booking-times" class="grid grid-cols-3 gap-2 text-center text-sm">
                                 <span class="p-2 border rounded-md hover:bg-gray-100 cursor-pointer">10:00</span>
                                 <span class="p-2 border rounded-md bg-emerald-600 text-white cursor-pointer">10:30</span>
                                 <span class="p-2 border rounded-md hover:bg-gray-100 cursor-pointer">11:00</span>
                             </div>
                         </div>
-                        <button class="w-full bg-emerald-600 text-white font-bold py-2 px-4 rounded-lg mt-4 hover:bg-emerald-700">Confirm Booking</button>
+                        <button id="confirm-booking-btn" class="w-full bg-emerald-600 text-white font-bold py-2 px-4 rounded-lg mt-4 hover:bg-emerald-700">Confirm Booking</button>
+                        <div id="booking-confirmation" class="hidden mt-3 text-center p-2 bg-green-100 text-green-800 text-sm rounded-lg">
+                            ✓ Appointment Confirmed!
+                        </div>
                     </div>
                 </div>
-                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md interactive-card">
                     <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-3xl font-bold mb-4">3</div>
                     <h4 class="text-xl font-semibold text-gray-800 mb-2 text-center">Receive Seamless Care</h4>
                     <p class="mb-4 text-center">Engage in video calls with real-time translation and cultural context notes.</p>
-                    <div class="w-full max-w-sm mx-auto bg-gray-900 p-2 rounded-lg border border-gray-700 text-white">
+                    <div id="video-demo" class="w-full max-w-sm mx-auto bg-gray-900 p-2 rounded-lg border border-gray-700 text-white">
                         <div class="relative bg-gray-800 rounded-md">
                             <img src="https://raw.githubusercontent.com/HARIKAYADAVPARIS/INDISANTE-WEBISTE/main/ChatGPT%20Image%20Jun%2021%2C%202025%2C%2008_41_27%20AM.jpg" alt="Doctor on video call" class="w-full h-40 object-cover rounded-md opacity-90">
                             <div class="absolute bottom-2 right-2 w-16 h-20 bg-gray-700 rounded-md border-2 border-white">
@@ -374,10 +403,13 @@
                             </div>
                         </div>
                         <div class="flex justify-center items-center space-x-4 mt-2 py-2">
-                             <button class="text-gray-300 hover:text-white"><i class="fas fa-microphone-slash"></i></button>
-                             <button class="bg-red-600 text-white rounded-full p-3 hover:bg-red-700"><i class="fas fa-phone-slash"></i></button>
-                             <button class="text-gray-300 hover:text-white"><i class="fas fa-video-slash"></i></button>
+                             <button id="mute-btn" class="text-gray-300 hover:text-white"><i class="fas fa-microphone"></i></button>
+                             <button id="end-call-btn" class="bg-red-600 text-white w-12 h-12 rounded-full hover:bg-red-700 flex items-center justify-center"><i class="fas fa-phone-slash"></i></button>
+                             <button id="video-btn" class="text-gray-300 hover:text-white"><i class="fas fa-video"></i></button>
                         </div>
+                    </div>
+                     <div id="end-call-message" class="hidden mt-3 text-center p-2 w-full max-w-sm mx-auto bg-red-100 text-red-800 text-sm rounded-lg">
+                        Call Ended.
                     </div>
                 </div>
             </div>
@@ -391,27 +423,27 @@
                 We're building the definitive platform for cultural healthcare delivery. Our strategic expansion plan ensures deep market penetration and scalable growth.
             </p>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                <div class="flex flex-col items-center p-6 bg-indigo-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div class="flex flex-col items-center p-6 bg-indigo-50 rounded-lg shadow-md interactive-card">
                     <span class="text-5xl mb-4">🇮🇳</span>
                     <h3 class="text-xl font-semibold text-indigo-700 mb-2">Phase 1: Indian Communities</h3>
                     <p class="text-center text-sm mb-2">**Target:** 4.2M people (Indian diaspora in EU)</p>
                     <p class="text-center text-sm mb-2">**Market:** €210M annual potential</p>
                     <p class="text-center text-xs text-gray-600">Deep cultural focus, leveraging existing community networks.</p>
                 </div>
-                <div class="flex flex-col items-center p-6 bg-teal-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div class="flex flex-col items-center p-6 bg-teal-50 rounded-lg shadow-md interactive-card">
                     <span class="text-5xl mb-4">🇰🇷🇯🇵</span> <h3 class="text-xl font-semibold text-teal-700 mb-2">Phase 2: East Asian Communities</h3>
                     <p class="text-center text-sm mb-2">**Target:** 2.5M+ people (e.g., Korean, Japanese, Chinese diaspora in EU)</p>
                     <p class="text-center text-sm mb-2">**Market:** €125M annual potential</p>
                     <p class="text-center text-xs text-gray-600">Adapt cultural competency and expand language support (e.g., Korean, Japanese, Mandarin).</p>
                 </div>
-                <div class="flex flex-col items-center p-6 bg-orange-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div class="flex flex-col items-center p-6 bg-orange-50 rounded-lg shadow-md interactive-card">
                     <span class="text-5xl mb-4">🇪🇺</span>
                     <h3 class="text-xl font-semibold text-orange-700 mb-2">Phase 3: All EU Immigrant Communities</h3>
                     <p class="text-center text-sm mb-2">**Target:** 35M people (diverse non-EU immigrants in EU)</p>
                     <p class="text-center text-sm mb-2">**Market:** €2.1B annual potential</p>
                     <p class="text-center text-xs text-gray-600">Generalize platform, onboard multi-cultural professionals.</p>
                 </div>
-                <div class="flex flex-col items-center p-6 bg-purple-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div class="flex flex-col items-center p-6 bg-purple-50 rounded-lg shadow-md interactive-card">
                     <span class="text-5xl mb-4">🌎</span>
                     <h3 class="text-xl font-semibold text-purple-700 mb-2">Phase 4: Global Expansion (North America & Beyond)</h3>
                     <p class="text-center text-sm mb-2">**Vision:** Leverage proven model to expand into high-density immigrant markets globally, including **North America** and other strategic corridors.</p>
@@ -428,21 +460,21 @@
                 IndiSanté is built on a foundation that ensures accessibility for our users while creating a viable and scalable business for the future.
             </p>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="p-6 bg-indigo-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                <div class="p-6 bg-indigo-50 rounded-lg shadow-md flex flex-col items-center interactive-card">
                     <span class="text-5xl mb-4">💰</span>
                     <h3 class="text-xl font-semibold text-indigo-700 mb-3">Direct-to-Consumer Fees</h3>
                     <p>
                         Users pay a transparent, affordable fee per consultation or for premium access to advanced AI features and concierge services.
                     </p>
                 </div>
-                <div class="p-6 bg-teal-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                <div class="p-6 bg-teal-50 rounded-lg shadow-md flex flex-col items-center interactive-card">
                     <span class="text-5xl mb-4">🤝</span>
                     <h3 class="text-xl font-semibold text-teal-700 mb-3">Partnerships with Institutions</h3>
                     <p>
                         Collaborating with universities, student organizations, and large employers to provide subsidized or bulk access for their communities.
                     </p>
                 </div>
-                <div class="p-6 bg-orange-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                <div class="p-6 bg-orange-50 rounded-lg shadow-md flex flex-col items-center interactive-card">
                     <span class="text-5xl mb-4">📊</span>
                     <h3 class="text-xl font-semibold text-orange-700 mb-3">Data-Driven Insights (Aggregated & Anonymized)</h3>
                     <p>
@@ -453,24 +485,24 @@
         </div>
     </section>
 
-    <section class="py-16 bg-white text-gray-700">
+    <section id="commitment" class="py-16 bg-white text-gray-700">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold text-green-800 mb-8">Our Commitment: Trust, Privacy, Compliance & IP</h2>
             <p class="text-lg max-w-4xl mx-auto mb-12">
                 We are building IndiSanté on a foundation of rigorous standards to ensure your peace of mind and access to safe, regulated care across borders, while also cultivating a defensible and innovative platform.
             </p>
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                <div class="p-6 bg-white rounded-lg shadow-md flex flex-col items-center interactive-card">
                     <span class="text-4xl text-green-500 mb-3">✅</span>
                     <h4 class="text-xl font-semibold text-gray-800 mb-2">GDPR-Ready Data Protection</h4>
                     <p>Your personal and health data are protected by the highest European privacy standards, ensuring confidentiality and control.</p>
                 </div>
-                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                <div class="p-6 bg-white rounded-lg shadow-md flex flex-col items-center interactive-card">
                     <span class="text-4xl text-green-500 mb-3">✅</span>
                     <h4 class="text-xl font-semibold text-gray-800 mb-2">Cross-Border Healthcare Compliance</h4>
                     <p>We meticulously navigate international healthcare regulations to ensure seamless, legal, and ethical care delivery, adopting a **phased, country-by-country compliance approach** informed by dedicated legal expertise. We also facilitate understanding and access to **EU citizens' rights for healthcare across member states and reimbursement eligibility.**</p>
                 </div>
-                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                <div class="p-6 bg-white rounded-lg shadow-md flex flex-col items-center interactive-card">
                     <span class="text-4xl text-green-500 mb-3">✅</span>
                     <h4 class="text-xl font-semibold text-gray-800 mb-2">Ethical AI & Proprietary Insights</h4>
                     <p>Our platform design anticipates and integrates with complex regulatory frameworks. We develop responsible AI, gathering **anonymized, consent-driven data** to build **proprietary knowledge graphs** and enhance unique, culturally-attuned insights that are defensible assets.</p>
@@ -479,25 +511,68 @@
         </div>
     </section>
 
-    <section id="social-impact" class="py-16 bg-emerald-700 text-white text-center">
-        <div class="container mx-auto px-4">
+    <section id="social-impact" class="py-16 bg-emerald-700 text-white">
+        <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold mb-8">Our Mission Beyond Profit: Driving Social Impact</h2>
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="flex flex-col items-center p-6 bg-emerald-600 rounded-lg shadow-md">
+                <div class="flex flex-col items-center p-6 bg-emerald-600 rounded-lg shadow-md interactive-card">
                     <span class="text-5xl mb-4">🤝</span>
                     <h3 class="text-xl font-semibold mb-2">Reducing Healthcare Disparities</h3>
                     <p class="text-sm">Directly addressing systemic barriers for immigrant communities, ensuring equitable access to quality care.</p>
                 </div>
-                <div class="flex flex-col items-center p-6 bg-emerald-600 rounded-lg shadow-md">
+                <div class="flex flex-col items-center p-6 bg-emerald-600 rounded-lg shadow-md interactive-card">
                     <span class="text-5xl mb-4">🇪🇺</span>
                     <h3 class="text-xl font-semibold mb-2">Supporting EU Integration</h3>
                     <p class="text-sm">Facilitating smoother adaptation and well-being for immigrants, fostering better integration and societal contribution.</p>
                 </div>
-                <div class="flex flex-col items-center p-6 bg-emerald-600 rounded-lg shadow-md">
+                <div class="flex flex-col items-center p-6 bg-emerald-600 rounded-lg shadow-md interactive-card">
                     <span class="text-5xl mb-4">🚨</span>
                     <h3 class="text-xl font-semibold mb-2">Preventing Medical Emergencies</h3>
                     <p class="text-sm">Leveraging early AI intervention and accessible telemedicine to catch health issues sooner, reducing emergency burdens.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq-summary" class="py-16 bg-gray-50 text-gray-700">
+        <div class="container mx-auto px-6 text-center">
+             <h2 class="text-4xl font-bold text-green-800 mb-12">Answering Your Key Questions</h2>
+             <div class="max-w-4xl mx-auto text-left space-y-4">
+
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <button class="faq-question w-full flex justify-between items-center text-left text-xl font-semibold text-gray-800">
+                        How does IndiSanté ensure doctor quality?
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden mt-4 text-gray-700 leading-relaxed border-t pt-4">
+                        <p>Our doctors undergo a rigorous, multi-stage vetting process focusing on medical licensing in the EU, linguistic proficiency, and direct experience with culturally-sensitive patient care.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <button class="faq-question w-full flex justify-between items-center text-left text-xl font-semibold text-gray-800">
+                        Is my medical data safe and private?
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden mt-4 text-gray-700 leading-relaxed border-t pt-4">
+                        <p>Yes. Protecting your data is our highest priority. Our platform is built to be compliant with GDPR, and all personal and medical data is encrypted and handled with strict confidentiality.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <button class="faq-question w-full flex justify-between items-center text-left text-xl font-semibold text-gray-800">
+                        Is this a service for medical emergencies?
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden mt-4 text-gray-700 leading-relaxed border-t pt-4">
+                        <p><strong>No.</strong> IndiSanté is not for medical emergencies. If you are experiencing a life-threatening situation, please contact your local emergency services immediately (e.g., by dialing 112 in most of Europe).</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8">
+                <a href="faq.html" class="inline-block bg-white text-emerald-700 hover:bg-gray-100 text-lg font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                    View All Questions
+                </a>
             </div>
         </div>
     </section>
@@ -510,7 +585,7 @@
                 Our diverse team combines deep expertise in healthcare, artificial intelligence, and cultural understanding, united by a passion to make a real difference.
             </p>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md interactive-card">
                     <img src="https://raw.githubusercontent.com/HARIKAYADAVPARIS/INDISANTE-WEBISTE/main/IMG_3005.jpeg" alt="Harika Yadav, Founder and CEO of IndiSanté" class="w-36 h-36 rounded-full object-cover mb-4 shadow-md">
                     <h3 class="text-xl font-semibold text-gray-800">Harika Yadav</h3>
                     <p class="text-green-600 mb-2">Founder & CEO</p>
@@ -518,7 +593,7 @@
                         Visionary leader with an *International Business Degree from Paris School of Business* and an **Executive Master's in Pharmacology from Harvard Medical College**. Based in Paris, her unique blend of business acumen, scientific insight, and personal experience drives IndiSanté's mission to bridge global healthcare gaps.
                     </p>
                 </div>
-                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md interactive-card">
                     <img src="https://raw.githubusercontent.com/HARIKAYADAVPARIS/INDISANTE-WEBISTE/main/IMG_3047.jpeg" alt="Krishi Telladalla, Head of AI Development at IndiSanté" class="w-36 h-36 rounded-full object-cover mb-4 shadow-md">
                     <h3 class="text-xl font-semibold text-gray-800">Krishi Telladalla</h3>
                     <p class="text-green-600 mb-2">Head of AI Development</p>
@@ -526,7 +601,7 @@
                         An accomplished AI and NLP expert with an *International Business Degree* and 8 years in Paris. Leads technological innovation, focusing on **building robust, ethical AI models for medical triage and translation**. She oversees the **development** of our core **AI features, including the live chat demo**, ensuring its functionality, ethical deployment, and **strategic development of proprietary AI models for future advanced features.**
                     </p>
                 </div>
-                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md interactive-card">
                     <img src="https://raw.githubusercontent.com/HARIKAYADAVPARIS/INDISANTE-WEBISTE/main/ChatGPT%20Image%20Jun%2021%2C%202025%2C%2008_41_27%20AM.jpg" alt="Dr. Anya Sharma, Chief Medical Officer at IndiSanté" class="w-36 h-36 rounded-full object-cover mb-4 shadow-md">
                     <h3 class="text-xl font-semibold text-gray-800">Dr. Anya Sharma</h3>
                     <p class="text-green-600 mb-2">Chief Medical Officer</p>
@@ -589,6 +664,7 @@
             <div class="flex justify-center space-x-6 text-sm mb-4">
                 <a href="privacy.html" class="hover:text-emerald-300 transition-colors">Privacy Policy</a>
                 <a href="terms.html" class="hover:text-emerald-300 transition-colors">Terms of Service</a>
+                <a href="for-doctors.html" class="hover:text-emerald-300 transition-colors">For Doctors</a>
                 <a href="mailto:contact@indisante.com" class="hover:text-emerald-300 transition-colors">Contact Us</a>
             </div>
             <div class="flex justify-center space-x-6 text-2xl">
@@ -607,6 +683,97 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // --- Interactive Demo Logic ---
+
+            // Booking Demo
+            const bookingDates = document.getElementById('booking-dates');
+            const bookingTimes = document.getElementById('booking-times');
+            const confirmBookingBtn = document.getElementById('confirm-booking-btn');
+            const bookingConfirmation = document.getElementById('booking-confirmation');
+
+            if (bookingDates) {
+                bookingDates.addEventListener('click', (e) => {
+                    if (e.target.dataset.day) {
+                        // Clear previous selection
+                        bookingDates.querySelectorAll('span[data-day]').forEach(span => {
+                            span.classList.remove('bg-emerald-500', 'text-white');
+                        });
+                        // Add new selection
+                        e.target.classList.add('bg-emerald-500', 'text-white');
+                    }
+                });
+            }
+            
+            if (bookingTimes) {
+                 bookingTimes.addEventListener('click', (e) => {
+                    if (e.target.tagName === 'SPAN') {
+                        bookingTimes.querySelectorAll('span').forEach(span => {
+                            span.classList.remove('bg-emerald-600', 'text-white');
+                        });
+                        e.target.classList.add('bg-emerald-600', 'text-white');
+                    }
+                });
+            }
+
+            if (confirmBookingBtn) {
+                confirmBookingBtn.addEventListener('click', () => {
+                    bookingConfirmation.classList.remove('hidden');
+                    setTimeout(() => {
+                        bookingConfirmation.classList.add('hidden');
+                    }, 3000);
+                });
+            }
+
+            // Video Call Demo
+            const videoDemo = document.getElementById('video-demo');
+            const muteBtn = document.getElementById('mute-btn');
+            const videoBtn = document.getElementById('video-btn');
+            const endCallBtn = document.getElementById('end-call-btn');
+            const endCallMessage = document.getElementById('end-call-message');
+
+            if(muteBtn) {
+                muteBtn.addEventListener('click', () => {
+                    const icon = muteBtn.querySelector('i');
+                    icon.classList.toggle('fa-microphone');
+                    icon.classList.toggle('fa-microphone-slash');
+                    muteBtn.classList.toggle('text-red-500');
+                });
+            }
+            
+            if(videoBtn) {
+                videoBtn.addEventListener('click', () => {
+                    const icon = videoBtn.querySelector('i');
+                    icon.classList.toggle('fa-video');
+                    icon.classList.toggle('fa-video-slash');
+                    videoBtn.classList.toggle('text-red-500');
+                });
+            }
+            
+            if(endCallBtn && videoDemo && endCallMessage) {
+                endCallBtn.addEventListener('click', () => {
+                    videoDemo.classList.add('hidden');
+                    endCallMessage.classList.remove('hidden');
+                     setTimeout(() => {
+                        videoDemo.classList.remove('hidden');
+                        endCallMessage.classList.add('hidden');
+                    }, 2000);
+                });
+            }
+
+
+            // --- FAQ Accordion ---
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('i');
+                    answer.classList.toggle('hidden');
+                    icon.classList.toggle('fa-chevron-down');
+                    icon.classList.toggle('fa-chevron-up');
+                });
+            });
+
+            // --- Google Form Iframe Logic ---
             const googleFormIframe = document.getElementById('googleFormIframe');
             if (googleFormIframe) {
                 googleFormIframe.onload = function() {
@@ -621,70 +788,57 @@
                 };
             }
 
-            // --- Chat Demo Logic ---
+            // --- AI Chat Demo Logic ---
             const chatInput = document.getElementById('chatInput');
             const sendChatBtn = document.getElementById('sendChatBtn');
             const chatMessages = document.getElementById('chatMessages');
-            const chatLoadingSpinner = document.getElementById('chatLoadingSpinner');
-
-            function addMessage(sender, text) {
+            
+            function addMessage(sender, text, isTyping = false) {
                 const messageDiv = document.createElement('div');
-                messageDiv.classList.add('message-bubble');
-                if (sender === 'user') {
-                    messageDiv.classList.add('user-message');
+                
+                if (isTyping) {
+                    messageDiv.classList.add('typing-indicator');
+                    messageDiv.innerHTML = '<span></span><span></span><span></span>';
+                    messageDiv.id = 'typing-bubble';
                 } else {
-                    messageDiv.classList.add('ai-message');
+                    messageDiv.classList.add('message-bubble');
+                    if (sender === 'user') {
+                        messageDiv.classList.add('user-message');
+                    } else {
+                        messageDiv.classList.add('ai-message');
+                    }
+                    messageDiv.textContent = text;
                 }
-                messageDiv.textContent = text;
+                
                 chatMessages.appendChild(messageDiv);
                 chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to bottom
             }
 
             async function getAiResponse(userInput) {
-                chatLoadingSpinner.classList.remove('hidden');
-                sendChatBtn.disabled = true;
+                addMessage('ai', '', true); // Show typing indicator
 
                 const prompt = `You are a medical triage AI for a telemedicine service called IndiSanté, specializing in Indian patients in Europe. A patient has just described their symptom: '${userInput}'. Provide a concise (1-2 sentences) simulated triage response, acknowledging cultural context if applicable, and suggest the next step (e.g., 'This sounds like X. Please connect with a general practitioner.'). Also, provide a short translation of your response into Hindi (in Devanagari script). Ensure the response is helpful and empathetic.`;
+                
+                // Simulate a delay for the AI response
+                await new Promise(resolve => setTimeout(resolve, 1500));
 
-                let chatHistory = [];
-                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-                const payload = { contents: chatHistory };
-                const apiKey = ""; // Canvas will provide this at runtime for Gemini
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    const result = await response.json();
-
-                    if (result.candidates && result.candidates.length > 0 &&
-                        result.candidates[0].content && result.candidates[0].content.parts &&
-                        result.candidates[0].content.parts.length > 0) {
-                        return result.candidates[0].content.parts[0].text;
-                    } else {
-                        console.error('AI response failed: Unexpected response structure or missing content.');
-                        return "I'm sorry, I couldn't process that. Can you please rephrase?";
-                    }
-                } catch (error) {
-                    console.error('Error fetching AI response:', error);
-                    return "There was an error connecting to our AI. Please try again later.";
-                } finally {
-                    chatLoadingSpinner.classList.add('hidden');
-                    sendChatBtn.disabled = false;
+                let aiResponseText = "Based on your symptoms, it would be best to speak with a general practitioner for a proper evaluation. We can help you find a suitable doctor. (आपके लक्षणों के आधार पर, उचित मूल्यांकन के लिए एक सामान्य चिकित्सक से बात करना सबसे अच्छा रहेगा। हम एक उपयुक्त डॉक्टर ढूंढने में आपकी मदद कर सकते हैं।)";
+                
+                // Remove typing indicator
+                const typingBubble = document.getElementById('typing-bubble');
+                if(typingBubble) {
+                    typingBubble.remove();
                 }
+
+                addMessage('ai', aiResponseText);
             }
 
-            sendChatBtn.addEventListener('click', async () => {
+            sendChatBtn.addEventListener('click', () => {
                 const userInput = chatInput.value.trim();
                 if (userInput) {
                     addMessage('user', userInput);
                     chatInput.value = ''; // Clear input
-
-                    const aiResponse = await getAiResponse(userInput);
-                    addMessage('ai', aiResponse);
+                    getAiResponse(userInput);
                 }
             });
 
@@ -693,7 +847,7 @@
                     sendChatBtn.click();
                 }
             });
-            // --- End Chat Demo Logic ---
+
         });
     </script>
 
