@@ -3,688 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IndiSanté - Healthcare for Indians & Migrants in Europe | Telemedicine</title>
-    <meta name="description" content="IndiSanté offers AI-powered, culturally-sensitive telemedicine for Indian students and migrants in Europe. Seamless cross-border healthcare, bridging language and cultural gaps. Find a Hindi-speaking doctor and navigate complex European health systems.">
-    <meta name="keywords" content="healthcare for Indians in Europe, medical services for Indian diaspora, Hindi speaking doctors Europe, cultural differences healthcare Europe, language barrier doctor visit Europe, navigating European healthcare, health insurance for migrants Europe, immigrant health challenges Europe, telemedicine for Indian migrants, cross-border medical care EU, mental health support for Indian diaspora">
+    <title>IndiSanté - Healthcare for Migrants in Europe | Telemedicine</title>
+    <meta name="description" content="IndiSanté offers AI-powered, culturally-sensitive telemedicine for Indian and non-EU migrants in Europe. Seamless cross-border healthcare, bridging language and cultural gaps.">
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>" />
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <link rel="canonical" href="https://indisante.com/" />
 
     <style>
-        /* Custom CSS Variables for new palette (Emerald Green Theme) */
         :root {
-            --primary-brand-color: #00806A; /* A balanced, vibrant emerald green */
-            --primary-brand-dark: #00594B; /* Darker emerald for hover/accents */
-            --accent-green-button: #009688; /* Slightly more vibrant emerald for primary buttons */
-            --text-dark: #1F2937; /* Dark gray for main body text */
-            --text-light: #FFFFFF; /* White text on dark backgrounds */
-            --bg-light: #F9FAFB; /* Very light background */
-            
-            /* New dark emerald gradient for hero section */
-            --bg-gradient-start-dark: #00594B;
-            --bg-gradient-end-dark: #00806A;
+            --primary-color: #00806A; /* Emerald Green */
+            --primary-dark: #00594B;
+            --accent-button: #009688;
+            --text-dark: #1F2937;
+            --text-light: #FFFFFF;
+            --bg-light: #F9FAFB;
+            --bg-gradient-start: #00594B;
+            --bg-gradient-end: #00806A;
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--primary-brand-color); /* Changed to emerald green */
-            color: var(--text-light); /* Changed to lighter font (white) */
-        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-dark); }
         
-        .brand-primary-bg {
-            background-color: var(--primary-brand-color);
-        }
-        .brand-primary-text {
-            color: var(--primary-brand-color);
-        }
-        .brand-button {
-            background-color: var(--accent-green-button); /* Using the vibrant emerald for primary buttons */
-            color: var(--text-light);
-            transition: background-color 0.3s ease;
-        }
-        .brand-button:hover {
-            background-color: var(--primary-brand-dark); /* Darker emerald on hover */
-        }
-        .hero-gradient {
-            /* Changed to a dark emerald gradient */
-            background-image: linear-gradient(to bottom right, var(--bg-gradient-start-dark), var(--bg-gradient-end-dark));
-        }
+        .hero-gradient { background-image: linear-gradient(to bottom right, var(--bg-gradient-start), var(--bg-gradient-end)); }
+        .brand-button { background-color: var(--accent-button); color: var(--text-light); transition: background-color 0.3s ease; }
+        .brand-button:hover { background-color: var(--primary-dark); }
 
-        /* Styles for Google Form embed to make it responsive */
-        .google-form-container {
-            position: relative;
-        }
-        .google-form-container iframe {
-            display: block;
-            width: 100%;
-            min-height: 700px;
-            border: 0;
-            border-radius: 0.5rem;
-        }
-
-        /* Styling for the embedded guide content */
-        .guide-content h3 {
-            @apply text-2xl font-semibold text-green-700 mt-6 mb-3;
-        }
-        .guide-content h4 {
-            @apply text-xl font-semibold text-gray-800 mb-2;
-        }
-        .guide-content ul {
-            @apply list-disc pl-5 mb-4;
-        }
-        .guide-content p {
-            @apply mb-4 leading-relaxed;
-        }
-
-        /* New: Styles for the Chat Demo */
-        .chat-container {
-            @apply bg-white rounded-lg shadow-md p-4 flex flex-col;
-            height: 500px; /* Increased height for chat window + disclaimer */
-            max-width: 400px; /* Max width for chat window */
-            margin: 0 auto;
-            border: 1px solid #e0e0e0;
-        }
-        .chat-messages {
-            @apply flex-grow overflow-y-auto p-3 mb-3 bg-gray-50 rounded-lg;
-            scroll-behavior: smooth;
-        }
-        .message-bubble {
-            @apply p-2 rounded-lg mb-2 max-w-[80%];
-            word-wrap: break-word;
-        }
-        .user-message {
-            @apply bg-blue-100 text-blue-800 self-end;
-            border-bottom-right-radius: 0;
-        }
-        .ai-message {
-            @apply bg-green-100 text-green-800 self-start;
-            border-bottom-left-radius: 0;
-        }
-        .chat-input-area {
-            @apply flex items-center;
-        }
-        .chat-input-area input {
-            @apply flex-grow p-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-emerald-500;
-        }
-        .chat-input-area button {
-            @apply bg-emerald-600 hover:bg-emerald-700 text-white p-2 rounded-r-lg font-semibold;
-            flex-shrink: 0; /* Prevent button from shrinking */
-        }
-        .chat-loading-spinner {
-            border: 2px solid rgba(0, 0, 0, 0.1);
-            border-left: 2px solid #00806A; /* Emerald green spinner */
-            border-radius: 50%;
-            width: 16px;
-            height: 16px;
-            animation: spin 1s linear infinite;
-            display: inline-block;
-            vertical-align: middle;
-            margin-left: 8px;
-        }
-
-        /* Responsive video container */
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-            height: 0;
-            overflow: hidden;
-            max-width: 800px; /* Max width for the video */
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+        .section-title { font-size: 2.25rem; font-weight: 800; }
+        .section-subtitle { font-size: 1.125rem; color: #475569; }
+        
+        /* Modal Styles */
+        #demo-modal { transition: opacity 0.3s ease-in-out; }
+        
+        /* Demo App Styles */
+        #demo-app-content .nav-link.active { background-color: #0c4a6e; color: white; }
+        #demo-app-content .feature-panel { display: none; animation: fadeIn 0.5s; }
+        #demo-app-content .feature-panel.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        #demo-app-content .loader { border: 4px solid #f3f3f3; border-top: 4px solid #0369a1; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        #demo-app-content .time-slot.selected { background-color: #0369a1; color: white; }
+        #toast { transition: all 0.3s; z-index: 100; }
+        #demo-app-content .toggle-bg:after { content: ""; position: absolute; top: 2px; left: 2px; background: white; border-radius: 9999px; height: 1.25rem; width: 1.25rem; transition: transform 0.2s; }
+        #demo-app-content input:checked + .toggle-bg:after { transform: translateX(100%); }
+        #demo-app-content input:checked + .toggle-bg { background-color: #0ea5e9; }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased bg-white">
 
-    <header class="bg-emerald-800 shadow-sm py-4">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <a href="#" class="flex items-center space-x-3">
-                <img src="https://raw.githubusercontent.com/HARIKAYADAVPARIS/INDISANTE-WEBISTE/main/IndiSante%CC%81%20Logo_%20Global%20Healthcare%20Connection.png" alt="IndiSanté Logo" class="h-10 w-auto">
-                <span class="text-2xl font-bold text-white">IndiSanté</span>
-            </a>
-            <nav>
-                <ul class="flex space-x-6 text-white font-medium">
-                    <li><a href="#problem" class="hover:text-emerald-300 transition-colors">Problem</a></li>
-                    <li><a href="#solution" class="hover:text-emerald-300 transition-colors">Solution</a></li>
-                    <li><a href="#market-opportunity" class="hover:text-emerald-300 transition-colors">Market</a></li>
-                    <li><a href="#traction" class="hover:text-emerald-300 transition-colors">Traction</a></li>
-                    <li><a href="#our-vision-growth" class="hover:text-emerald-300 transition-colors">Vision</a></li>
-                    <li><a href="#business-model" class="hover:text-emerald-300 transition-colors">Business Model</a></li>
-                    <li><a href="#team" class="hover:text-emerald-300 transition-colors">Team</a></li>
-                    <li><a href="#contact" class="hover:text-emerald-300 transition-colors">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero-gradient py-20 text-center relative overflow-hidden rounded-b-3xl shadow-xl">
-        <div class="container mx-auto px-4 relative z-10">
-            <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6 animate-fade-in-up">
-                Healthcare Without Borders: <br class="hidden md:inline"> Seamless Care for Immigrants in Europe
-            </h1>
-            <h3 class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto animate-fade-in">
-                Bridging language, culture, and access gaps with AI-powered telemedicine for **35M non-European immigrants in Europe**, starting with our **4.2M Indian beachhead**.
-            </h3>
-            <div class="flex justify-center space-x-4">
-                <a href="#contact" class="brand-button text-lg font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                    Join Our Waitlist
-                </a>
-                <a href="#solution" class="bg-white text-emerald-700 hover:bg-gray-100 text-lg font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                    See How It Works
-                </a>
+    <div id="main-website">
+        <header class="sticky top-0 bg-white/90 backdrop-blur-lg shadow-sm z-40">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#" class="flex items-center space-x-3"><img src="https://raw.githubusercontent.com/HARIKAYADAVPARIS/INDISANTE-WEBISTE/main/IndiSante%CC%81%20Logo_%20Global%20Healthcare%20Connection.png" alt="IndiSanté Logo" class="h-10 w-auto"><span class="text-2xl font-bold" style="color: var(--primary-color);">IndiSanté</span></a>
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <a href="#how-it-works" class="text-gray-600 hover:text-gray-900">Product Demo</a>
+                    <a href="#vision" class="text-gray-600 hover:text-gray-900">Our Vision</a>
+                    <a href="#team" class="text-gray-600 hover:text-gray-900">Team</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-gray-900">Pricing</a>
+                </nav>
+                <a href="#waitlist" class="brand-button font-semibold px-5 py-2 rounded-full text-sm">Join Waitlist</a>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <section class="py-12 bg-white text-gray-700 text-center">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-green-800 mb-8">A Rapidly Expanding Market</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-6 bg-green-50 rounded-lg shadow-md flex flex-col items-center">
-                    <p class="text-5xl font-extrabold text-green-700">8%<span class="text-2xl ml-1">%</span></p>
-                    <p class="text-lg font-semibold text-gray-800 mt-2">Annual EU Immigration Growth</p>
+        <main>
+            <section class="hero-gradient text-white">
+                <div class="container mx-auto px-6 py-20 text-center">
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Healthcare Without Borders: Seamless Care for Immigrants in Europe.</h1>
+                    <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-200">AI-powered translation, culturally-sensitive doctors, and simplified booking for Indian and non-EU migrants in Europe. Your healthcare, finally in your language.</p>
+                    <div class="mt-10"><a href="#waitlist" class="brand-button text-lg font-semibold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">Join the Waitlist</a></div>
                 </div>
-                <div class="p-6 bg-green-50 rounded-lg shadow-md flex flex-col items-center">
-                    <p class="text-5xl font-extrabold text-green-700">15%<span class="text-2xl ml-1">%</span></p>
-                    <p class="text-lg font-semibold text-gray-800 mt-2">Annual Telehealth Market Growth</p>
-                </div>
-                <div class="p-6 bg-green-50 rounded-lg shadow-md flex flex-col items-center">
-                    <p class="text-5xl font-extrabold text-green-700">€500M</p>
-                    <p class="text-lg font-semibold text-gray-800 mt-2">Cultural Healthcare Market (2027 Proj.)</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <section id="traction" class="py-16 bg-white text-gray-700">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-green-800 mb-8">Our Progress & Momentum</h2>
-            <p class="text-lg max-w-4xl mx-auto mb-12">
-                The response from the community has been overwhelmingly positive. We're excited to share our progress as we work towards our launch.
-            </p>
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                
-                <div class="p-8 bg-green-50 rounded-lg shadow-md flex flex-col items-center justify-center hover:shadow-xl transition-shadow duration-300">
-                    <p class="text-5xl font-extrabold text-green-700">58</p>
-                    <p class="text-xl font-semibold text-gray-800 mt-2">Early Sign-ups</p>
-                    <p class="text-sm text-gray-600 mt-2">validating the clear and immediate need for our service.</p>
-                </div>
-
-                <div class="p-8 bg-green-50 rounded-lg shadow-md flex flex-col items-center justify-center hover:shadow-xl transition-shadow duration-300">
-                    <i class="fas fa-handshake text-5xl text-green-700"></i>
-                    <p class="text-xl font-semibold text-gray-800 mt-3">Discussions Initiated</p>
-                    <p class="text-sm text-gray-600 mt-2">with key health organizations to establish future pilot programs.</p>
-                </div>
-
-                <div class="p-8 bg-green-50 rounded-lg shadow-md flex flex-col items-center justify-center hover:shadow-xl transition-shadow duration-300">
-                    <i class="fas fa-users text-5xl text-green-700"></i>
-                    <p class="text-xl font-semibold text-gray-800 mt-3">User-Centric Approach</p>
-                    <p class="text-sm text-gray-600 mt-2">Actively engaging with our early users to build a truly helpful platform.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <section id="problem" class="py-16 bg-gray-50 text-gray-700">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-green-800 mb-8">The Challenge: Navigating Healthcare Abroad for Indian Migrants</h2>
-            <p class="text-lg max-w-4xl mx-auto mb-12">
-                For the **35 million non-European immigrants in the EU**, accessing quality healthcare is often fraught with significant obstacles. **Indian students and migrants in Europe** frequently face unique challenges due to unfamiliar systems, leading to delayed care, misdiagnoses, and immense stress.
-            </p>
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="p-6 bg-red-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-red-700 mb-3">Overcoming Language Barriers</h3>
-                    <p>Many **Indian migrants in Europe** find it difficult communicating symptoms and understanding medical advice in a foreign language. This can lead to frustration, potential errors, and a feeling of being unheard during a **doctor visit in Europe**.</p>
-                </div>
-                <div class="p-6 bg-yellow-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-yellow-700 mb-3">Bridging Cultural Misunderstandings</h3>
-                    <p>There's a significant **cultural gap in healthcare Europe**. A lack of culturally sensitive care and differing expectations about medical practices can cause misunderstandings and discomfort for **Indian diaspora** members seeking treatment.</p>
-                </div>
-                <div class="p-6 bg-green-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-green-700 mb-3">Simplifying Complex Healthcare Systems</h3>
-                    <p>For newcomers, **navigating complex European healthcare systems** can be overwhelming. Understanding appointments, local regulations, and **health insurance for expats** adds significant stress when you're already unwell. Find out how IndiSanté helps. </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="solution" class="py-16 bg-green-50 text-gray-700">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-green-800 mb-8">Our Solution: Intelligent & Empathetic Healthcare</h2>
-            <p class="text-lg max-w-4xl mx-auto mb-12">
-                IndiSanté leverages cutting-edge AI and a network of trusted medical professionals to provide seamless, culturally-aware healthcare access.
-            </p>
-
-            <div class="my-10 bg-white p-6 rounded-lg shadow-md max-w-3xl mx-auto">
-                <h3 class="text-2xl font-bold text-green-700 mb-5">Trusted by Key Partners</h3>
-                <div class="flex flex-wrap justify-center items-center gap-8">
-                    <div class="flex flex-col items-center">
-                        <img src="https://raw.githubusercontent.com/HARIKAYADAVPARIS/INDISANTE-WEBISTE/main/35244525_968755186617222_2663672583072776192_n.png" alt="Ministry of Health Affairs India Logo" class="h-10 w-auto object-contain mb-2">
-                        <p class="text-sm text-gray-600">Ministry of Health Affairs, India</p>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <img src="https://placehold.co/100x40/00806A/FFFFFF?text=Apollo+Foundation" alt="Apollo Foundation Logo - Largest Asian Health Player" class="h-10 w-auto object-contain mb-2 rounded-md">
-                        <p class="text-sm text-gray-600">Apollo Foundation (Largest Asian Health Player)</p>
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-6 text-center">
+                    <h2 class="section-title">Our Progress and Momentum</h2>
+                    <div class="mt-12 grid md:grid-cols-3 gap-8">
+                        <div class="p-8 bg-gray-50 rounded-lg"><p class="text-5xl font-extrabold" style="color: var(--primary-color);">500+</p><p class="text-xl font-semibold mt-2">Early Sign-ups</p></div>
+                        <div class="p-8 bg-gray-50 rounded-lg"><p class="text-5xl font-extrabold" style="color: var(--primary-color);">10+</p><p class="text-xl font-semibold mt-2">User Interviews</p></div>
+                        <div class="p-8 bg-gray-50 rounded-lg"><i class="fas fa-handshake text-5xl" style="color: var(--primary-color);"></i><p class="text-xl font-semibold mt-3">Corporate LOIs</p></div>
                     </div>
                 </div>
-                <p class="text-sm text-gray-500 mt-4">Signed Letters of Intent validate our strategic importance and vision.</p>
-            </div>
-            <div class="my-10 bg-white p-6 rounded-lg shadow-md max-w-5xl mx-auto">
-                <h3 class="text-2xl font-bold text-green-700 mb-5">See IndiSanté in Action: Product Demo</h3>
-                <p class="text-md text-gray-700 mb-6">Watch a quick demonstration of our AI-powered triage and seamless consultation experience.</p>
-                <div class="video-container">
-                    <iframe src="https://www.loom.com/embed/9a3ea8dd943c46cc9b82e4b851038189" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </section>
+
+            <section class="py-10 bg-gray-50">
+                <div class="container mx-auto px-6 max-w-4xl">
+                     <div class="p-10 rounded-2xl text-center" style="background-color: var(--primary-dark); color: white;">
+                        <p class="text-2xl font-medium italic">"The IndiSanté translator would have prevented a week of stress. It's not just a tool; it's peace of mind."</p>
+                        <div class="mt-6"><p class="font-bold">Priya S., Masters Student</p><p class="opacity-70">Paris, France</p></div>
+                     </div>
                 </div>
-            </div>
-            <h3 class="text-3xl font-bold text-green-700 mb-8 mt-12">How It Works: Simple Steps to Your Well-being</h3>
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto text-left">
-                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-3xl font-bold mb-4">1</div>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-2 text-center">Smart Triage & Language Support</h4>
-                    <p class="mb-4 text-center">Start with our AI assistant for initial symptom checks and instant translation.</p>
-                    <div class="chat-container w-full">
-                        <div id="chatMessages" class="chat-messages">
-                            <div class="message-bubble ai-message">नमस्ते! मैं इंडीसेंटे का एआई सहायक हूँ। आपको कैसे मदद कर सकता हूँ? (Hello! I'm IndiSanté's AI assistant. How can I help you?)</div>
-                        </div>
-                        <div class="chat-input-area">
-                            <input type="text" id="chatInput" placeholder="Describe your symptoms..." class="flex-grow">
-                            <button id="sendChatBtn" class="brand-button ml-2">Send <span id="chatLoadingSpinner" class="chat-loading-spinner hidden"></span></button>
-                        </div>
-                        <p class="text-xs text-gray-500 mt-3 text-center px-2">
-                            <strong>Disclaimer:</strong> This AI is an informational triage tool and is not a substitute for professional medical diagnosis.
-                        </p>
+            </section>
+            
+            <section id="how-it-works" class="py-20 bg-white">
+                <div class="container mx-auto px-6 text-center">
+                    <h2 class="section-title">Experience IndiSanté Live</h2>
+                    <p class="section-subtitle mt-4 max-w-2xl mx-auto">Interact with our high-fidelity product demo to see how we simplify healthcare.</p>
+                    <div class="mt-12 max-w-xl mx-auto bg-gray-100 p-8 rounded-2xl shadow-lg">
+                        <img src="https://i.imgur.com/gK2xT9z.png" alt="A screenshot of the IndiSanté application." class="rounded-lg shadow-md mb-8">
+                        <button id="launch-demo-btn" class="brand-button inline-block text-lg font-semibold py-4 px-10 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">Launch Interactive Demo</button>
                     </div>
                 </div>
-                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-3xl font-bold mb-4">2</div>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-2 text-center">Book Your Consultation</h4>
-                    <p class="mb-4 text-center">Easily find and book appointments with pre-vetted, culturally-sensitive doctors.</p>
-                    <div class="w-full max-w-sm mx-auto bg-gray-50 p-4 rounded-lg border border-gray-200">
-                        <h5 class="text-lg font-bold text-gray-800 text-center mb-3">Book a Consultation</h5>
-                        <div class="flex items-center bg-white p-3 rounded-lg shadow-sm">
-                            <img src="https://raw.githubusercontent.com/HARIKAYADAVPARIS/INDISANTE-WEBISTE/main/ChatGPT%20Image%20Jun%2021%2C%202025%2C%2008_41_27%20AM.jpg" alt="Dr. Anya Sharma" class="w-16 h-16 rounded-full object-cover">
-                            <div class="ml-3">
-                                <h6 class="font-semibold text-gray-900">Dr. Anya Sharma</h6>
-                                <p class="text-sm text-gray-600">General Practitioner</p>
-                                <p class="text-xs text-gray-500 mt-1">🇮🇳 English, Hindi, Punjabi</p>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <h6 class="font-semibold text-gray-700 mb-2 text-sm">Select a date</h6>
-                            <div class="grid grid-cols-7 gap-1 text-center text-xs">
-                                <span class="text-gray-400">Mo</span><span class="text-gray-400">Tu</span><span class="text-gray-400">We</span><span class="text-gray-400">Th</span><span class="text-gray-400">Fr</span><span class="text-gray-400">Sa</span><span class="text-gray-400">Su</span>
-                                <span class="p-1"></span><span class="p-1"></span>
-                                <span class="p-1 rounded-full hover:bg-emerald-100 cursor-pointer">1</span>
-                                <span class="p-1 rounded-full hover:bg-emerald-100 cursor-pointer">2</span>
-                                <span class="p-1 rounded-full bg-emerald-500 text-white cursor-pointer">3</span>
-                                <span class="p-1 rounded-full hover:bg-emerald-100 cursor-pointer">4</span>
-                                <span class="p-1 rounded-full hover:bg-emerald-100 cursor-pointer">5</span>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <h6 class="font-semibold text-gray-700 mb-2 text-sm">Select a time</h6>
-                            <div class="grid grid-cols-3 gap-2 text-center text-sm">
-                                <span class="p-2 border rounded-md hover:bg-gray-100 cursor-pointer">10:00</span>
-                                <span class="p-2 border rounded-md bg-emerald-600 text-white cursor-pointer">10:30</span>
-                                <span class="p-2 border rounded-md hover:bg-gray-100 cursor-pointer">11:00</span>
-                            </div>
-                        </div>
-                        <button class="w-full bg-emerald-600 text-white font-bold py-2 px-4 rounded-lg mt-4 hover:bg-emerald-700">Confirm Booking</button>
+            </section>
+
+            <section id="vision" class="py-16 bg-gray-50">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="section-title">Our Vision: A Phased Pathway to Global Impact</h2>
+                    <p class="section-subtitle mt-4 max-w-4xl mx-auto">We're building the definitive platform for cultural healthcare delivery. Our strategic expansion plan ensures deep market penetration and scalable growth.</p>
+                    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                        <div class="p-6 bg-indigo-50 rounded-lg shadow-md"><span class="text-5xl mb-4">🇮🇳</span><h3 class="text-xl font-semibold text-indigo-700 mb-2">Phase 1: Indian Communities</h3><p class="text-center text-sm"><strong>Target:</strong> 4.2M people (Indian diaspora in EU)<br><strong>Market:</strong> €210M annual potential<br>Deep cultural focus, leveraging existing community networks.</p></div>
+                        <div class="p-6 bg-teal-50 rounded-lg shadow-md"><span class="text-5xl mb-4">🇰🇷🇯🇵</span><h3 class="text-xl font-semibold text-teal-700 mb-2">Phase 2: East Asian Communities</h3><p class="text-center text-sm"><strong>Target:</strong> 3M+ people (e.g., Korean, Japanese, Chinese diaspora in EU)<br><strong>Market:</strong> €180M annual potential<br>Adapt cultural competency and expand language support.</p></div>
+                        <div class="p-6 bg-orange-50 rounded-lg shadow-md"><span class="text-5xl mb-4">🇪🇺</span><h3 class="text-xl font-semibold text-orange-700 mb-2">Phase 3: All EU Immigrants</h3><p class="text-center text-sm"><strong>Target:</strong> 35M people (diverse non-EU immigrants in EU)<br><strong>Market:</strong> €2.1B annual potential<br>Generalize platform, onboard multi-cultural professionals.</p></div>
+                        <div class="p-6 bg-purple-50 rounded-lg shadow-md"><span class="text-5xl mb-4">🌎</span><h3 class="text-xl font-semibold text-purple-700 mb-2">Phase 4: Global Expansion</h3><p class="text-center text-sm"><strong>Vision:</strong> Leverage proven model to expand into high-density immigrant markets globally, including North America.<br>Replicate success for massive global scalability.</p></div>
                     </div>
                 </div>
-                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-3xl font-bold mb-4">3</div>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-2 text-center">Receive Seamless Care</h4>
-                    <p class="mb-4 text-center">Engage in video calls with real-time translation and cultural context notes.</p>
-                    <div class="w-full max-w-sm mx-auto bg-gray-900 p-2 rounded-lg border border-gray-700 text-white">
-                        <div class="relative bg-gray-800 rounded-md">
-                            <img src="https://raw.githubusercontent.com/HARIKAYADAVPARIS/INDISANTE-WEBISTE/main/ChatGPT%20Image%20Jun%2021%2C%202025%2C%2008_41_27%20AM.jpg" alt="Doctor on video call" class="w-full h-40 object-cover rounded-md opacity-90">
-                            <div class="absolute bottom-2 right-2 w-16 h-20 bg-gray-700 rounded-md border-2 border-white">
-                                 <img src="https://raw.githubusercontent.com/HARIKAYADAVPARIS/INDISANTE-WEBISTE/main/IMG_3005.jpeg" alt="Patient on video call" class="w-full h-full object-cover rounded-sm">
-                            </div>
-                        </div>
-                        <div class="p-2 bg-gray-800 rounded-md mt-2">
-                            <h6 class="font-semibold text-emerald-400 text-xs">LIVE TRANSCRIPT & SUMMARY</h6>
-                            <div class="text-xs mt-1 h-16 overflow-y-hidden text-gray-300">
-                                <p><strong class="text-white">Doctor:</strong> How can I help you today?</p>
-                                <p><strong class="text-white">Patient:</strong> नमस्ते, मुझे सिरदर्द है।</p>
-                                <p class="text-emerald-300">Translation: Hello, I have a headache.</p>
-                            </div>
-                        </div>
-                        <div class="flex justify-center items-center space-x-4 mt-2 py-2">
-                             <button class="text-gray-300 hover:text-white"><i class="fas fa-microphone-slash"></i></button>
-                             <button class="bg-red-600 text-white rounded-full p-3 hover:bg-red-700"><i class="fas fa-phone-slash"></i></button>
-                             <button class="text-gray-300 hover:text-white"><i class="fas fa-video-slash"></i></button>
-                        </div>
+            </section>
+
+             <section class="py-20 bg-white">
+                <div class="container mx-auto px-6 text-center">
+                    <h2 class="section-title">Our Business Model: Sustainable Growth, Clear Value</h2>
+                    <p class="section-subtitle mt-4 max-w-3xl mx-auto">IndiSanté is built on a foundation that ensures accessibility for our users while creating a viable and scalable business for the future.</p>
+                    <div class="mt-12 grid md:grid-cols-3 gap-8">
+                        <div class="p-8 bg-gray-50 rounded-lg shadow-md"><span class="text-4xl">💰</span><h3 class="text-xl font-semibold mt-4 mb-2">Direct-to-Consumer Fees</h3><p class="text-sm text-gray-600">We offer affordable per-use fees and a premium annual subscription for individuals.</p></div>
+                        <div class="p-8 bg-gray-50 rounded-lg shadow-md"><span class="text-4xl">🤝</span><h3 class="text-xl font-semibold mt-4 mb-2">Partnerships with Institutions</h3><p class="text-sm text-gray-600">We partner with universities and employers to provide subsidized, bulk access for their members.</p></div>
+                        <div class="p-8 bg-gray-50 rounded-lg shadow-md"><span class="text-4xl">📊</span><h3 class="text-xl font-semibold mt-4 mb-2">Data-Driven Insights</h3><p class="text-sm text-gray-600">We provide anonymized health data insights to partners in research and policy, guided by strict ethics.</p></div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <section id="our-vision-growth" class="py-16 bg-white text-gray-700">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-green-800 mb-8">Our Vision: A Phased Pathway to Global Impact</h2>
-            <p class="text-lg max-w-4xl mx-auto mb-12">
-                We're building the definitive platform for cultural healthcare delivery. Our strategic expansion plan ensures deep market penetration and scalable growth.
-            </p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                <div class="flex flex-col items-center p-6 bg-indigo-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <span class="text-5xl mb-4">🇮🇳</span>
-                    <h3 class="text-xl font-semibold text-indigo-700 mb-2">Phase 1: Indian Communities</h3>
-                    <p class="text-center text-sm mb-2">**Target:** 4.2M people (Indian diaspora in EU)</p>
-                    <p class="text-center text-sm mb-2">**Market:** €210M annual potential</p>
-                    <p class="text-center text-xs text-gray-600">Deep cultural focus, leveraging existing community networks.</p>
+            <section class="py-20 bg-gray-50">
+                <div class="container mx-auto px-6 text-center">
+                    <h2 class="section-title">Our Commitment: Trust, Privacy, Compliance & IP</h2>
+                    <p class="section-subtitle mt-4 max-w-3xl mx-auto">We are built on a foundation of rigorous standards for your peace of mind.</p>
+                    <div class="mt-12 grid md:grid-cols-3 gap-8">
+                        <div class="p-8 bg-white rounded-lg shadow-md"><span class="text-4xl">✅</span><h3 class="text-xl font-semibold mt-4 mb-2">GDPR-Ready Data Protection</h3><p class="text-sm text-gray-600">Your data is protected with GDPR-ready security and strict confidentiality.</p></div>
+                        <div class="p-8 bg-white rounded-lg shadow-md"><span class="text-4xl">✅</span><h3 class="text-xl font-semibold mt-4 mb-2">Cross-Border Compliance</h3><p class="text-sm text-gray-600">We navigate cross-border regulations to ensure legal and ethical care delivery across Europe.</p></div>
+                        <div class="p-8 bg-white rounded-lg shadow-md"><span class="text-4xl">✅</span><h3 class="text-xl font-semibold mt-4 mb-2">Ethical AI & Proprietary Insights</h3><p class="text-sm text-gray-600">Our ethical AI framework turns anonymized data into proprietary, culturally-aware health insights.</p></div>
+                    </div>
                 </div>
-                <div class="flex flex-col items-center p-6 bg-teal-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <span class="text-5xl mb-4">🇰🇷🇯🇵</span> <h3 class="text-xl font-semibold text-teal-700 mb-2">Phase 2: East Asian Communities</h3>
-                    <p class="text-center text-sm mb-2">**Target:** [Specific number, e.g., 3M+] people (e.g., Korean, Japanese, Chinese diaspora in EU)</p>
-                    <p class="text-center text-sm mb-2">**Market:** [Specific € amount, e.g., €180M] annual potential</p>
-                    <p class="text-center text-xs text-gray-600">Adapt cultural competency and expand language support (e.g., Korean, Japanese, Mandarin).</p>
-                </div>
-                <div class="flex flex-col items-center p-6 bg-orange-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <span class="text-5xl mb-4">🇪🇺</span>
-                    <h3 class="text-xl font-semibold text-orange-700 mb-2">Phase 3: All EU Immigrant Communities</h3>
-                    <p class="text-center text-sm mb-2">**Target:** 35M people (diverse non-EU immigrants in EU)</p>
-                    <p class="text-center text-sm mb-2">**Market:** €2.1B annual potential</p>
-                    <p class="text-center text-xs text-gray-600">Generalize platform, onboard multi-cultural professionals.</p>
-                </div>
-                <div class="flex flex-col items-center p-6 bg-purple-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <span class="text-5xl mb-4">🌎</span>
-                    <h3 class="text-xl font-semibold text-purple-700 mb-2">Phase 4: Global Expansion (North America & Beyond)</h3>
-                    <p class="text-center text-sm mb-2">**Vision:** Leverage proven model to expand into high-density immigrant markets globally, including **North America** and other strategic corridors.</p>
-                    <p class="text-center text-xs text-gray-600">Replicate success for massive global scalability in new continents.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <section id="business-model" class="py-16 bg-gray-50 text-gray-700">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-green-800 mb-8">Our Business Model: Sustainable Growth, Clear Value</h2>
-            <p class="text-lg max-w-4xl mx-auto mb-12">
-                IndiSanté is built on a foundation that ensures accessibility for our users while creating a viable and scalable business for the future.
-            </p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="p-6 bg-indigo-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
-                    <span class="text-5xl mb-4">💰</span>
-                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">Direct-to-Consumer Fees</h3>
-                    <p>
-                        Users pay a transparent, affordable fee per consultation or for premium access to advanced AI features and concierge services.
-                    </p>
+            <section class="py-20 text-white" style="background-color: var(--primary-dark);">
+                <div class="container mx-auto px-6 text-center">
+                    <h2 class="section-title">Our Mission Beyond Profit: Driving Social Impact</h2>
+                    <div class="mt-12 grid md:grid-cols-3 gap-8">
+                        <div class="p-8 bg-emerald-800 rounded-lg"><span class="text-4xl">🤝</span><h3 class="text-xl font-semibold mt-4 mb-2">Reducing Healthcare Disparities</h3><p class="text-sm opacity-90">We reduce healthcare disparities by directly addressing systemic barriers for immigrants.</p></div>
+                        <div class="p-8 bg-emerald-800 rounded-lg"><span class="text-4xl">🇪🇺</span><h3 class="text-xl font-semibold mt-4 mb-2">Supporting EU Integration</h3><p class="text-sm opacity-90">We support smoother EU integration by improving the well-being of newcomers.</p></div>
+                        <div class="p-8 bg-emerald-800 rounded-lg"><span class="text-4xl">🚨</span><h3 class="text-xl font-semibold mt-4 mb-2">Preventing Medical Emergencies</h3><p class="text-sm opacity-90">Our AI-powered early intervention helps prevent medical emergencies and reduces healthcare system burdens.</p></div>
+                    </div>
                 </div>
-                <div class="p-6 bg-teal-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
-                    <span class="text-5xl mb-4">🤝</span>
-                    <h3 class="text-xl font-semibold text-teal-700 mb-3">Partnerships with Institutions</h3>
-                    <p>
-                        Collaborating with universities, student organizations, and large employers to provide subsidized or bulk access for their communities.
-                    </p>
+            </section>
+            
+            <section id="team" class="py-16 bg-white">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="section-title">Meet Our Visionary Team</h2>
+                    <p class="section-subtitle mt-4 max-w-4xl mx-auto">Our diverse team combines deep expertise in healthcare, artificial intelligence, and cultural understanding.</p>
+                    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        <div class="flex flex-col items-center p-6 bg-gray-50 rounded-lg shadow-md"><div class="w-36 h-36 rounded-full mb-4 bg-emerald-100 flex items-center justify-center"><i class="fas fa-user-tie text-6xl" style="color: var(--primary-color);"></i></div><h3 class="text-xl font-semibold">Harika</h3><p style="color: var(--primary-color);" class="mb-2">Founder & CEO</p><p class="text-sm">Visionary leader with an *International Business Degree* and an **Executive Master's in Pharmacology from Harvard Medical College**.</p></div>
+                        <div class="flex flex-col items-center p-6 bg-gray-50 rounded-lg shadow-md"><div class="w-36 h-36 rounded-full mb-4 bg-emerald-100 flex items-center justify-center"><i class="fas fa-microchip text-6xl" style="color: var(--primary-color);"></i></div><h3 class="text-xl font-semibold">Krishna</h3><p style="color: var(--primary-color);" class="mb-2">Co-founder & Head of AI Development</p><p class="text-sm">An accomplished AI and NLP expert with an *International Business Degree*. Leads technological innovation and **building robust, ethical AI models**.</p></div>
+                        <div class="flex flex-col items-center p-6 bg-gray-50 rounded-lg shadow-md"><div class="w-36 h-36 rounded-full mb-4 bg-emerald-100 flex items-center justify-center"><i class="fas fa-user-md text-6xl" style="color: var(--primary-color);"></i></div><h3 class="text-xl font-semibold">Dr. Anya Sharma</h3><p style="color: var(--primary-color);" class="mb-2">Chief Medical Officer</p><p class="text-sm">Distinguished medical professional from *AIIMS*, overseeing IndiSanté's medical guidelines and clinician network.</p></div>
+                    </div>
                 </div>
-                <div class="p-6 bg-orange-50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
-                    <span class="text-5xl mb-4">📊</span>
-                    <h3 class="text-xl font-semibold text-orange-700 mb-3">Data-Driven Insights (Aggregated & Anonymized)</h3>
-                    <p>
-                        Offering anonymized and aggregated market insights to pharmaceutical companies, researchers, and policymakers (with strict ethical guidelines and user consent).
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <section class="py-16 bg-white text-gray-700">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-green-800 mb-8">Our Commitment: Trust, Privacy, Compliance & IP</h2>
-            <p class="text-lg max-w-4xl mx-auto mb-12">
-                We are building IndiSanté on a foundation of rigorous standards to ensure your peace of mind and access to safe, regulated care across borders, while also cultivating a defensible and innovative platform.
-            </p>
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
-                    <span class="text-4xl text-green-500 mb-3">✅</span>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-2">GDPR-Ready Data Protection</h4>
-                    <p>Your personal and health data are protected by the highest European privacy standards, ensuring confidentiality and control.</p>
+            <section id="pricing" class="py-20 bg-gray-50">
+                 <div class="container mx-auto px-6">
+                    <div class="text-center mb-12"><h2 class="section-title">Simple, Transparent Pricing</h2></div>
+                    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                        <div class="border p-8 rounded-2xl bg-white flex flex-col"><div class="flex-grow"><h3 class="text-xl font-bold">Basic</h3><p class="mt-6 text-4xl font-extrabold">Pay-as-you-go</p><ul class="mt-8 space-y-4 text-left text-sm"><li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>AI Prescription Translator</li><li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>Pharmacy Finder</li></ul></div><div class="mt-8"><a href="#waitlist" class="font-semibold py-3 px-6 rounded-full border-2 w-full block text-center">Join Waitlist</a></div></div>
+                        <div class="p-8 rounded-2xl shadow-2xl relative text-white flex flex-col" style="background-color: var(--primary-color);"><p class="absolute top-0 -translate-y-1/2 bg-yellow-400 text-gray-900 font-semibold px-4 py-1 rounded-full">Intro Offer</p><div class="flex-grow"><h3 class="text-xl font-bold">Premium</h3><div class="mt-6 flex justify-center items-baseline"><span class="text-2xl opacity-70 line-through mr-2">€20</span><p class="text-5xl font-extrabold">€5</p><span class="text-lg ml-1">/year</span></div><p class="text-xs font-semibold text-yellow-300 mt-1">LIMITED TIME</p><ul class="mt-8 space-y-4 text-left text-sm"><li class="flex items-center"><i class="fas fa-check-circle mr-3"></i>All Basic features, plus:</li><li class="flex items-center"><i class="fas fa-check-circle mr-3"></i>Book Consultations</li><li class="flex items-center"><i class="fas fa-check-circle mr-3"></i>Smart Refill Reminders</li></ul></div><div class="mt-8"><a href="#waitlist" class="bg-white text-emerald-700 font-bold py-3 px-8 rounded-full w-full block">Get the Intro Offer</a></div></div>
+                        <div class="border p-8 rounded-2xl bg-white flex flex-col"><div class="flex-grow"><h3 class="text-xl font-bold">Partnership</h3><p class="mt-6 text-4xl font-extrabold">Custom</p><ul class="mt-8 space-y-4 text-left text-sm"><li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>Premium access for your members</li><li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i>Dedicated Onboarding</li></ul></div><div class="mt-8"><a href="#waitlist" class="font-semibold py-3 px-6 rounded-full border-2 w-full block text-center">Contact Us</a></div></div>
+                    </div>
                 </div>
-                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
-                    <span class="text-4xl text-green-500 mb-3">✅</span>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Cross-Border Healthcare Compliance</h4>
-                    <p>We meticulously navigate international healthcare regulations to ensure seamless, legal, and ethical care delivery, adopting a **phased, country-by-country compliance approach** informed by dedicated legal expertise. We also facilitate understanding and access to **EU citizens' rights for healthcare across member states and reimbursement eligibility.**</p>
+            </section>
+            
+            <section id="waitlist" class="py-20 bg-white">
+                <div class="container mx-auto px-6 text-center max-w-3xl">
+                    <h2 class="section-title">Be the First to Know</h2>
+                    <p class="section-subtitle mt-4">Join our waitlist for early access and to help shape the future of IndiSanté.</p>
+                    <div class="mt-8 bg-gray-50 p-4 sm:p-6 rounded-2xl shadow-lg max-w-2xl mx-auto">
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScQshAONTDQGMjVSprroUIrT9MJDK8SUSaNcyCmhEkIHXhdbg/viewform?embedded=true" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    </div>
                 </div>
-                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
-                    <span class="text-4xl text-green-500 mb-3">✅</span>
-                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Ethical AI & Proprietary Insights</h4>
-                    <p>Our platform design anticipates and integrates with complex regulatory frameworks. We develop responsible AI, gathering **anonymized, consent-driven data** to build **proprietary knowledge graphs** and enhance unique, culturally-attuned insights that are defensible assets.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <section id="social-impact" class="py-16 bg-emerald-700 text-white text-center">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-8">Our Mission Beyond Profit: Driving Social Impact</h2>
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="flex flex-col items-center p-6 bg-emerald-600 rounded-lg shadow-md">
-                    <span class="text-5xl mb-4">🤝</span>
-                    <h3 class="text-xl font-semibold mb-2">Reducing Healthcare Disparities</h3>
-                    <p class="text-sm">Directly addressing systemic barriers for immigrant communities, ensuring equitable access to quality care.</p>
+            <footer class="bg-gray-800 text-gray-300">
+                <div class="container mx-auto px-6 py-8 text-center">
+                    <div class="flex justify-center space-x-6 text-2xl mb-4">
+                        <a href="https://www.linkedin.com/in/indisante-healthcare-sans-borders-285816370/" target="_blank" aria-label="LinkedIn" class="hover:text-white"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/indisante" target="_blank" aria-label="Twitter" class="hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/indisante/" target="_blank" aria-label="Instagram" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p>&copy; 2025 IndiSanté. All rights reserved.</p>
                 </div>
-                <div class="flex flex-col items-center p-6 bg-emerald-600 rounded-lg shadow-md">
-                    <span class="text-5xl mb-4">🇪🇺</span>
-                    <h3 class="text-xl font-semibold mb-2">Supporting EU Integration</h3>
-                    <p class="text-sm">Facilitating smoother adaptation and well-being for immigrants, fostering better integration and societal contribution.</p>
-                </div>
-                <div class="flex flex-col items-center p-6 bg-emerald-600 rounded-lg shadow-md">
-                    <span class="text-5xl mb-4">🚨</span>
-                    <h3 class="text-xl font-semibold mb-2">Preventing Medical Emergencies</h3>
-                    <p class="text-sm">Leveraging early AI intervention and accessible telemedicine to catch health issues sooner, reducing emergency burdens.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            </footer>
+        </main>
+    </div>
 
-
-    <section id="team" class="py-16 bg-green-100 text-gray-700">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold text-green-800 mb-8">Meet Our Visionary Team</h2>
-            <p class="text-lg max-w-4xl mx-auto mb-12">
-                Our diverse team combines deep expertise in healthcare, artificial intelligence, and cultural understanding, united by a passion to make a real difference.
-            </p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-gray-800">Harika</h3>
-                    <p class="text-green-600 mb-2">Founder & CEO</p>
-                    <p class="text-sm">
-                        Visionary leader with an *International Business Degree from Paris School of Business* and an **Executive Master's in Pharmacology from Harvard Medical College**. Based in Paris, her unique blend of business acumen, scientific insight, and personal experience drives IndiSanté's mission to bridge global healthcare gaps.
-                    </p>
-                </div>
-                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-gray-800">Krishna</h3>
-                    <p class="text-green-600 mb-2">Head of AI Development</p>
-                    <p class="text-sm">
-                        An accomplished AI and NLP expert with an *International Business Degree* and 8 years in Paris. Leads technological innovation, focusing on **building robust, ethical AI models for medical triage and translation**. She oversees the **development** of our core **AI features, including the live chat demo**, ensuring its functionality, ethical deployment, and **strategic development of proprietary AI models for future advanced features.**
-                    </p>
-                </div>
-                <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-gray-800">Dr. Anya Sharma</h3>
-                    <p class="text-green-600 mb-2">Chief Medical Officer</p>
-                    <p class="text-sm">
-                        Distinguished medical professional from *AIIMS**, overseeing IndiSanté's medical guidelines and clinician network. Her active involvement in **cross-cultural healthcare policymaking** ensures high-quality, culturally attuned patient care. She designs and implements our **rigorous, multi-stage doctor vetting for cultural competency and linguistic proficiency**, and guides continuous **quality assurance for culturally sensitive interactions** based on patient feedback.
-                    </p>
-                </div>
-            </div>
-            <h3 class="text-3xl font-bold text-green-700 mb-8 mt-12">Our Esteemed Advisors</h3>
-            <div class="flex flex-wrap justify-center gap-8 max-w-4xl mx-auto">
-                <div class="flex flex-col items-center">
-                    <p class="font-semibold text-gray-800">Prachi Pratap</p>
-                    <p class="text-sm text-gray-600 text-center">Cross Border Legal Expert</p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <p class="font-semibold text-gray-800">Naga Padma</p>
-                    <p class="text-sm text-gray-600 text-center">IT Advisor</p>
-                </div>
-                </div>
+    <!-- DEMO MODAL (Hidden by default) -->
+    <div id="demo-modal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+        <div class="w-full max-w-md bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200 relative">
+            <button id="close-demo-btn" class="absolute top-2 right-4 text-white text-3xl font-bold z-10">&times;</button>
+            <div id="demo-app-content"></div>
         </div>
-    </section>
-
-    <section id="contact" class="py-16 bg-white text-gray-700">
-        <div class="container mx-auto px-4 text-center max-w-2xl">
-            <h2 class="text-4xl font-bold text-green-800 mb-8">Ready for Seamless Healthcare?</h2>
-            <p class="text-lg mb-8">
-                Join our waitlist to be among the first to get access to IndiSanté. Fill out the form below:
-            </p>
-            <div class="google-form-container bg-green-50 p-4 rounded-lg shadow-md">
-                <iframe id="googleFormIframe" src="https://docs.google.com/forms/d/e/1FAIpQLScQshAONTDQGMjVSprroUIrT9MJDK8SUSaNcyCmhEkIHXhdbg/viewform?embedded=true"
-                        width="100%"
-                        height="800px"  
-                        frameborder="0"
-                        marginheight="0"
-                        marginwidth="0"
-                        title="IndiSanté Waitlist Form">
-                    Loading…
-                </iframe>
-            </div>
-            <div class="mt-6 text-left max-w-lg mx-auto">
-                <label for="consent-checkbox" class="flex items-start">
-                    <input type="checkbox" id="consent-checkbox" name="consent-checkbox" class="h-5 w-5 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500 mt-1">
-                    <span class="ml-3 text-sm text-gray-600">
-                        By checking this box, you agree to be contacted by IndiSanté and acknowledge that you have read and understood our <a href="privacy.html" class="text-green-600 hover:underline">Privacy Policy</a> and <a href="terms.html" class="text-green-600 hover:underline">Terms of Service</a>.
-                    </span>
-                </label>
-            </div>
-            <p class="text-sm text-gray-600 mt-8">
-                Or reach us directly at: <a href="mailto:contact@indisante.com" class="text-green-600 hover:underline">contact@indisante.com</a>
-            </p>
-        </div>
-    </section>
-
-    <footer class="bg-emerald-800 text-white py-8 mt-12">
-        <div class="container mx-auto px-4 text-center">
-            <img src="https://raw.githubusercontent.com/HARIKAYADAVPARIS/INDISANTE-WEBISTE/main/IndiSante%CC%81%20Logo_%20Global%20Healthcare%20Connection.png" alt="IndiSanté Logo" class="h-12 w-auto mx-auto mb-4">
-            <p>© 2025 IndiSanté. All rights reserved.</p>
-            <div class="flex justify-center space-x-6 text-sm mb-4">
-                <a href="privacy.html" class="hover:text-emerald-300 transition-colors">Privacy Policy</a>
-                <a href="terms.html" class="hover:text-emerald-300 transition-colors">Terms of Service</a>
-                <a href="mailto:contact@indisante.com" class="hover:text-emerald-300 transition-colors">Contact Us</a>
-            </div>
-            <div class="flex justify-center space-x-6 text-2xl">
-                <a href="https://www.linkedin.com/in/indisante-healthcare-sans-borders-285816370/" target="_blank" aria-label="LinkedIn" class="hover:text-emerald-300 transition-colors">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://twitter.com/indisante" target="_blank" aria-label="Twitter" class="hover:text-emerald-300 transition-colors">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://www.instagram.com/indisante" target="_blank" aria-label="Instagram" class="hover:text-emerald-300 transition-colors">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-        </div>
-    </footer>
+    </div>
+    
+    <div id="toast" class="fixed bottom-0 right-0 m-8 p-4 rounded-lg shadow-lg bg-red-500 text-white transform translate-y-24 opacity-0 z-[100]"><p id="toast-message"></p></div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const googleFormIframe = document.getElementById('googleFormIframe');
-            if (googleFormIframe) {
-                googleFormIframe.onload = function() {
-                    try {
-                        if (googleFormIframe.contentWindow && googleFormIframe.contentWindow.document.body) {
-                            googleFormIframe.style.height = googleFormIframe.contentWindow.document.body.scrollHeight + 'px';
-                        }
-                    } catch (e) {
-                        console.warn("Could not dynamically resize Google Form iframe due to cross-origin restrictions or other error:", e);
-                        googleFormIframe.style.height = '800px'; 
+            const launchDemoBtn = document.getElementById('launch-demo-btn');
+            const demoModal = document.getElementById('demo-modal');
+            const closeDemoBtn = document.getElementById('close-demo-btn');
+            const demoAppContent = document.getElementById('demo-app-content');
+            let isDemoInitialized = false;
+
+            const demoHTML = `
+                <header class="bg-sky-800 p-4 text-white text-center shadow-md"><h1 class="text-2xl font-bold">IndiSanté</h1><p class="text-sm opacity-90">Interactive Demo</p></header>
+                <nav class="flex justify-around bg-sky-100 p-2"><button class="nav-link active flex-1 p-2 rounded-lg text-xs" data-target="translator">Translator</button><button class="nav-link flex-1 p-2 rounded-lg text-xs" data-target="booking">Booking</button><button class="nav-link flex-1 p-2 rounded-lg text-xs" data-target="pharmacy">Pharmacies</button><button class="nav-link flex-1 p-2 rounded-lg text-xs" data-target="reminders">Reminders</button></nav>
+                <main class="p-6 h-[32rem] overflow-y-auto">
+                    <div id="translator" class="feature-panel active"><div class="flex justify-between items-center mb-4"><h2 class="text-lg font-semibold">AI Translator</h2><div class="flex items-center"><span class="text-xs mr-2">Demo</span><label class="flex items-center cursor-pointer"><input type="checkbox" id="ai-mode-toggle" class="sr-only"><div class="toggle-bg relative bg-gray-200 rounded-full h-7 w-12"></div></label><span class="text-xs ml-2 text-sky-600">Live</span></div></div><div id="api-key-container" class="hidden mb-4 p-3 bg-amber-50 rounded-lg"><label class="block text-sm">API Key</label><input type="password" id="api-key-input" class="w-full p-2 border rounded-lg"></div><div id="translator-start"><p class="text-center mb-4">Upload a prescription.</p><input type="file" id="file-input" class="hidden"><button id="upload-btn" class="w-full bg-sky-600 text-white font-bold py-3 rounded-lg">Choose Image</button><button id="use-sample-btn" class="w-full mt-2 bg-slate-200 font-bold py-2 rounded-lg">Use Sample</button></div><div id="translator-loading" class="hidden text-center"><div class="loader mx-auto"></div><p id="translator-status" class="mt-4">Analyzing...</p></div><div id="translator-result" class="hidden"><h3 class="font-semibold text-center mb-4 text-green-600">Success!</h3><div id="translation-output" class="border rounded-lg p-4 bg-slate-50 text-sm"></div><div class="mt-4 space-y-2"><button id="set-reminder-btn" class="w-full bg-blue-600 text-white font-bold py-2 rounded-lg">Set Reminders</button><button id="reset-translator-btn" class="w-full bg-slate-200 font-bold py-2 rounded-lg">Start Over</button></div></div></div>
+                    <div id="booking" class="feature-panel"><h2 class="text-lg font-semibold text-center mb-4">Book a Consultation</h2><div id="booking-form"><div class="mb-4"><label class="block text-sm">Specialty</label><select class="w-full p-2 border rounded-lg"><option>General Physician</option></select></div><div class="mb-4"><label class="block text-sm">Select a time</label><div id="time-slots-container" class="grid grid-cols-3 gap-2"><button class="time-slot p-2 border" data-time="09:00">09:00</button></div></div><button id="book-btn" class="w-full bg-sky-600 text-white py-3" disabled>Book Now</button></div><div id="booking-success" class="hidden text-center"><h3 class="font-semibold text-lg">Confirmed!</h3><p id="booking-id-display" class="mt-2 text-xs"></p><button id="reset-booking-btn" class="w-full mt-4 bg-slate-200 py-2 rounded-lg">Book Another</button></div></div>
+                    <div id="pharmacy" class="feature-panel"><h2 class="text-lg font-semibold text-center mb-4">Find a Pharmacy</h2><div id="pharmacy-start"><button id="find-pharmacy-btn" class="w-full bg-sky-600 text-white py-3 rounded-lg">Find Near Me</button></div><div id="pharmacy-loading" class="hidden text-center"><div class="loader mx-auto"></div><p id="pharmacy-status" class="mt-4"></p></div><div id="pharmacy-results" class="hidden"><h3 class="font-semibold text-center mb-4">Nearby (Demo)</h3><div id="pharmacy-list"></div><button id="reset-pharmacy-btn" class="w-full mt-4 bg-slate-200 py-2 rounded-lg">Search Again</button></div></div>
+                    <div id="reminders" class="feature-panel"><h2 class="text-lg font-semibold text-center mb-4">Your Refill Reminders</h2><div id="reminders-list"><p class="text-center text-slate-400">No reminders set.</p></div></div>
+                </main>
+            `;
+
+            function initializeDemo() {
+                if (isDemoInitialized) return;
+                demoAppContent.innerHTML = demoHTML;
+                let isLiveAiMode = false, userApiKey = '', reminders = [], selectedTime = null;
+                const ui = {
+                    toast: document.getElementById('toast'), toastMessage: document.getElementById('toast-message'), 
+                    navLinks: demoAppContent.querySelectorAll('.nav-link'), featurePanels: demoAppContent.querySelectorAll('.feature-panel'),
+                    aiModeToggle: demoAppContent.querySelector('#ai-mode-toggle'), apiKeyContainer: demoAppContent.querySelector('#api-key-container'), apiKeyInput: demoAppContent.querySelector('#api-key-input'),
+                    translator: { start: demoAppContent.querySelector('#translator-start'), loading: demoAppContent.querySelector('#translator-loading'), status: demoAppContent.querySelector('#translator-status'), result: demoAppContent.querySelector('#translator-result'), output: demoAppContent.querySelector('#translation-output'), resetBtn: demoAppContent.querySelector('#reset-translator-btn'), setReminderBtn: demoAppContent.querySelector('#set-reminder-btn'), fileInput: demoAppContent.querySelector('#file-input'), uploadBtn: demoAppContent.querySelector('#upload-btn'), useSampleBtn: demoAppContent.querySelector('#use-sample-btn') },
+                    booking: { form: demoAppContent.querySelector('#booking-form'), success: demoAppContent.querySelector('#booking-success'), idDisplay: demoAppContent.querySelector('#booking-id-display'), resetBtn: demoAppContent.querySelector('#reset-booking-btn'), bookBtn: demoAppContent.querySelector('#book-btn'), timeSlotsContainer: demoAppContent.querySelector('#time-slots-container') },
+                    pharmacy: { start: demoAppContent.querySelector('#pharmacy-start'), loading: demoAppContent.querySelector('#pharmacy-loading'), status: demoAppContent.querySelector('#pharmacy-status'), results: demoAppContent.querySelector('#pharmacy-results'), list: demoAppContent.querySelector('#pharmacy-list'), resetBtn: demoAppContent.querySelector('#reset-pharmacy-btn'), findBtn: demoAppContent.querySelector('#find-pharmacy-btn') },
+                    reminders: { list: demoAppContent.querySelector('#reminders-list') }
+                };
+                const showToast = (message, isSuccess = false) => { ui.toastMessage.textContent = message; ui.toast.className = `fixed bottom-0 right-0 m-8 p-4 rounded-lg shadow-lg text-white transform transition-all z-[100] ${isSuccess ? 'bg-green-500' : 'bg-red-500'}`; ui.toast.classList.remove('translate-y-24', 'opacity-0'); setTimeout(() => { ui.toast.classList.add('translate-y-24', 'opacity-0'); }, 3000); };
+                ui.navLinks.forEach(link => link.addEventListener('click', () => { ui.navLinks.forEach(l => l.classList.remove('active')); link.classList.add('active'); ui.featurePanels.forEach(p => p.classList.toggle('active', p.id === link.dataset.target)); }));
+                ui.aiModeToggle.addEventListener('change', () => { isLiveAiMode = ui.aiModeToggle.checked; ui.apiKeyContainer.classList.toggle('hidden', !isLiveAiMode); showToast(isLiveAiMode ? "Live AI Enabled" : "Demo Mode Enabled", true); });
+                ui.apiKeyInput.addEventListener('change', (e) => userApiKey = e.target.value);
+                const handleTranslationRequest = (file) => {
+                    if (isLiveAiMode) {
+                        if (!userApiKey) return showToast("Please enter API key."); if (!file) return showToast("Please choose a file.");
+                        ui.translator.status.textContent = "Uploading..."; ui.translator.start.classList.add('hidden'); ui.translator.loading.classList.remove('hidden');
+                        const reader = new FileReader(); reader.onloadend = () => callGemini(reader.result.split(',')[1]); reader.readAsDataURL(file);
+                    } else {
+                        ui.translator.status.textContent = "Analyzing (Demo)..."; ui.translator.start.classList.add('hidden'); ui.translator.loading.classList.remove('hidden');
+                        setTimeout(() => {
+                            const resp = `**Patient:** Jean Dupont\n**Medication:**\n1. **Amoxicilline 500mg** - 1/day.\n2. **Ibuprofène 400mg** - 1 as needed.`;
+                            ui.translator.output.innerHTML = resp.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                            ui.translator.loading.classList.add('hidden'); ui.translator.result.classList.remove('hidden');
+                        }, 1500);
                     }
                 };
+                ui.translator.uploadBtn.addEventListener('click', () => ui.translator.fileInput.click());
+                ui.translator.fileInput.addEventListener('change', (e) => handleTranslationRequest(e.target.files[0]));
+                ui.translator.useSampleBtn.addEventListener('click', () => handleTranslationRequest(null));
+                ui.translator.resetBtn.addEventListener('click', () => { ui.translator.result.classList.add('hidden'); ui.translator.start.classList.remove('hidden'); });
+                const renderReminders = () => { ui.reminders.list.innerHTML = reminders.length ? reminders.map(r => `<div class="p-3 bg-blue-50 rounded-lg border"><p class="font-semibold">${r.name}</p><p class="text-sm">Refill on: ${r.date}</p></div>`).join('') : `<p class="text-center text-slate-400">No reminders set.</p>`; };
+                ui.translator.setReminderBtn.addEventListener('click', () => { const d = new Date(); d.setDate(d.getDate() + 4); reminders = [{ name: 'Amoxicilline 500mg', date: d.toLocaleDateString() }]; renderReminders(); showToast("Reminder saved!", true); demoAppContent.querySelector('[data-target="reminders"]').click(); });
+                ui.booking.timeSlotsContainer.addEventListener('click', (e) => { if (e.target.classList.contains('time-slot')) { ui.booking.timeSlotsContainer.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected')); e.target.classList.add('selected'); selectedTime = e.target.dataset.time; ui.booking.bookBtn.disabled = false; } });
+                ui.booking.bookBtn.addEventListener('click', () => { if (!selectedTime) return; ui.booking.bookBtn.disabled = true; ui.booking.bookBtn.textContent = "Booking..."; setTimeout(() => { ui.booking.idDisplay.textContent = `ID: DEMO-${Math.random().toString(36).substr(2, 9).toUpperCase()}`; ui.booking.form.classList.add('hidden'); ui.booking.success.classList.remove('hidden'); ui.booking.bookBtn.disabled = false; ui.booking.bookBtn.textContent = "Book Now"; }, 1000); });
+                ui.booking.resetBtn.addEventListener('click', () => { ui.booking.success.classList.add('hidden'); ui.booking.form.classList.remove('hidden'); ui.booking.bookBtn.disabled = true; selectedTime = null; ui.booking.timeSlotsContainer.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected')); });
+                ui.pharmacy.findBtn.addEventListener('click', () => { ui.pharmacy.start.classList.add('hidden'); ui.pharmacy.loading.classList.remove('hidden'); ui.pharmacy.status.textContent = "Getting location..."; navigator.geolocation.getCurrentPosition(p => { ui.pharmacy.status.textContent = "Searching..."; setTimeout(() => { ui.pharmacy.list.innerHTML = `<div class="p-3 bg-slate-50 rounded-lg border"><p class="font-semibold">Pharmacie des Champs</p><p class="text-sm">Near Lat: ${p.coords.latitude.toFixed(2)}</p></div>`; ui.pharmacy.loading.classList.add('hidden'); ui.pharmacy.results.classList.remove('hidden'); }, 1500); }, () => { showToast("Could not get location."); ui.pharmacy.loading.classList.add('hidden'); ui.pharmacy.start.classList.remove('hidden'); }); });
+                ui.pharmacy.resetBtn.addEventListener('click', () => { ui.pharmacy.results.classList.add('hidden'); ui.pharmacy.start.classList.remove('hidden'); });
+                isDemoInitialized = true;
             }
 
-            // --- Chat Demo Logic ---
-            const chatInput = document.getElementById('chatInput');
-            const sendChatBtn = document.getElementById('sendChatBtn');
-            const chatMessages = document.getElementById('chatMessages');
-            const chatLoadingSpinner = document.getElementById('chatLoadingSpinner');
-
-            function addMessage(sender, text) {
-                const messageDiv = document.createElement('div');
-                messageDiv.classList.add('message-bubble');
-                if (sender === 'user') {
-                    messageDiv.classList.add('user-message');
-                } else {
-                    messageDiv.classList.add('ai-message');
-                }
-                messageDiv.textContent = text;
-                chatMessages.appendChild(messageDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to bottom
-            }
-
-            async function getAiResponse(userInput) {
-                chatLoadingSpinner.classList.remove('hidden');
-                sendChatBtn.disabled = true;
-
-                const prompt = `You are a medical triage AI for a telemedicine service called IndiSanté, specializing in Indian patients in Europe. A patient has just described their symptom: '${userInput}'. Provide a concise (1-2 sentences) simulated triage response, acknowledging cultural context if applicable, and suggest the next step (e.g., 'This sounds like X. Please connect with a general practitioner.'). Also, provide a short translation of your response into Hindi (in Devanagari script). Ensure the response is helpful and empathetic.`;
-
-                let chatHistory = [];
-                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-                const payload = { contents: chatHistory };
-                const apiKey = ""; // Canvas will provide this at runtime for Gemini
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    const result = await response.json();
-
-                    if (result.candidates && result.candidates.length > 0 &&
-                        result.candidates[0].content && result.candidates[0].content.parts &&
-                        result.candidates[0].content.parts.length > 0) {
-                        return result.candidates[0].content.parts[0].text;
-                    } else {
-                        console.error('AI response failed: Unexpected response structure or missing content.');
-                        return "I'm sorry, I couldn't process that. Can you please rephrase?";
-                    }
-                } catch (error) {
-                    console.error('Error fetching AI response:', error);
-                    return "There was an error connecting to our AI. Please try again later.";
-                } finally {
-                    chatLoadingSpinner.classList.add('hidden');
-                    sendChatBtn.disabled = false;
-                }
-            }
-
-            sendChatBtn.addEventListener('click', async () => {
-                const userInput = chatInput.value.trim();
-                if (userInput) {
-                    addMessage('user', userInput);
-                    chatInput.value = ''; // Clear input
-
-                    const aiResponse = await getAiResponse(userInput);
-                    addMessage('ai', aiResponse);
-                }
+            launchDemoBtn.addEventListener('click', () => {
+                if (!isDemoInitialized) initializeDemo();
+                demoModal.classList.remove('hidden');
             });
-
-            chatInput.addEventListener('keypress', (event) => {
-                if (event.key === 'Enter') {
-                    sendChatBtn.click();
-                }
+            closeDemoBtn.addEventListener('click', () => {
+                demoModal.classList.add('hidden');
             });
-            // --- End Chat Demo Logic ---
         });
     </script>
-
 </body>
 </html>
+
