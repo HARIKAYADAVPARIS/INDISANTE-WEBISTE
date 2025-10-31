@@ -51,6 +51,11 @@
         #demo-app-content .toggle-bg:after { content: ""; position: absolute; top: 2px; left: 2px; background: white; border-radius: 9999px; height: 1.25rem; width: 1.25rem; transition: transform 0.2s; }
         #demo-app-content input:checked + .toggle-bg:after { transform: translateX(100%); }
         #demo-app-content input:checked + .toggle-bg { background-color: #0ea5e9; }
+
+        /* Simple prose styles for blog section */
+        .prose p { margin-bottom: 1rem; }
+        .prose ul { list-style-position: inside; list-style-type: disc; margin-bottom: 1rem; }
+        .prose li { margin-bottom: 0.5rem; }
     </style>
 </head>
 <body class="antialiased bg-white">
@@ -64,6 +69,7 @@
                     <a href="#vision" class="text-gray-600 hover:text-gray-900">Our Vision</a>
                     <a href="#team" class="text-gray-600 hover:text-gray-900">Team</a>
                     <a href="#pricing" class="text-gray-600 hover:text-gray-900">Pricing</a>
+                    <a href="#updates" class="text-gray-600 hover:text-gray-900">Updates</a>
                 </nav>
                 <a href="#waitlist" class="brand-button font-semibold px-5 py-2 rounded-full text-sm">Join Waitlist</a>
             </div>
@@ -102,9 +108,9 @@
                 <div class="container mx-auto px-6 text-center">
                     <h2 class="section-title">Our Progress and Momentum</h2>
                     <div class="mt-12 grid md:grid-cols-3 gap-8">
-                        <div class="p-8 bg-white rounded-lg shadow-md"><p class="text-5xl font-extrabold" style="color: var(--primary-color);">500+</p><p class="text-xl font-semibold mt-2">Early Sign-ups</p></div>
-                        <div class="p-8 bg-white rounded-lg shadow-md"><p class="text-5xl font-extrabold" style="color: var(--primary-color);">10+</p><p class="text-xl font-semibold mt-2">User Interviews</p></div>
-                        <div class="p-8 bg-white rounded-lg shadow-md"><i class="fas fa-handshake text-5xl" style="color: var(--primary-color);"></i><p class="text-xl font-semibold mt-3">Corporate LOIs</p></div>
+                        <div class="p-8 bg-white rounded-lg shadow-md"><i class="fas fa-rocket text-5xl" style="color: var(--primary-color);"></i><p class="text-xl font-semibold mt-3">MVP Live</p></div>
+                        <div class="p-8 bg-white rounded-lg shadow-md"><p class="text-5xl font-extrabold" style="color: var(--primary-color);">738</p><p class="text-xl font-semibold mt-2">Migrant Surveys</p></div>
+                        <div class="p-8 bg-white rounded-lg shadow-md"><p class="text-5xl font-extrabold" style="color: var(--primary-color);">2</p><p class="text-xl font-semibold mt-2">Corporate LOIs</p></div>
                     </div>
                 </div>
             </section>
@@ -145,9 +151,48 @@
                         <div class="flex flex-col items-center p-6 bg-orange-50 rounded-lg shadow-md"><span class="text-5xl mb-4">🇪🇺</span><h3 class="text-xl font-semibold text-orange-700 mb-2">Phase 3: All EU Immigrants</h3><p class="text-center text-sm">Generalize platform, onboard multi-cultural professionals.</p></div>
                         <div class="flex flex-col items-center p-6 bg-purple-50 rounded-lg shadow-md"><span class="text-5xl mb-4">🌎</span><h3 class="text-xl font-semibold text-purple-700 mb-2">Phase 4: Global Expansion</h3><p class="text-center text-sm">Leverage proven model to expand into new high-density markets.</p></div>
                     </div>
-                </div>
+
+                    <div class="mt-16 max-w-4xl mx-auto p-8 bg-gray-50 rounded-2xl shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Our 2025 Milestones & Paris Pilot</h3>
+                        <p class="text-gray-600 text-left">
+                            Our immediate focus for 2025 is the successful execution of our **Paris Pilot Program**. This pilot involves partnering with 10+ student associations and corporations to provide IndiSanté's services to over 1,000 Indian students and expatriates.
+                        </p>
+                        <ul class="list-disc list-inside text-left text-gray-600 mt-4 space-y-2">
+                            <li><strong>Q1 2025:</strong> Launch MVP and secure initial pilot partners.</li>
+                            <li><strong>Q2 2025:</strong> Onboard 500+ users and 20 specialized doctors.</li>
+                            <li><strong>Q3 2025:</strong> Gather compliance data and publish pilot feedback report.</li>
+                            <li><strong>Q4 2025:</strong> Secure Swiss partnerships (Innosuisse) and finalize Phase 2 (East Asian) strategy.</li>
+                        </ul>
+                    </div>
+                    </div>
             </section>
-            
+
+            <section class="bg-white">
+              <div class="mx-auto max-w-7xl px-6 py-12">
+                <h2 class="text-3xl font-semibold text-center">Why Switzerland</h2>
+                <p class="mt-4 max-w-3xl text-gray-700 mx-auto text-center">
+                  Switzerland is our next step: a high-trust healthcare ecosystem, world-class digital-health clusters, and a large South Asian diaspora across Geneva, Lausanne, Bern and Zürich. IndiSanté contributes to the Swiss innovation fabric by:
+                </p>
+                <ul class="mt-5 grid gap-4 sm:grid-cols-2">
+                  <li class="rounded-2xl bg-gray-50 p-5 shadow-sm">
+                    <h3 class="font-medium">Interoperability & compliance</h3>
+                    <p class="mt-2 text-gray-600">Designing AI flows that respect GDPR/HDS standards; preparing Swissmedic-aligned documentation; building CNIL/ANS/HAS evidence to port into Swiss contexts.</p>
+                  </li>
+                  <li class="rounded-2xl bg-gray-50 p-5 shadow-sm">
+                    <h3 class="font-medium">Patient-centric access</h3>
+                    <p class="mt-2 text-gray-600">Reducing time-to-care for migrants with multilingual triage and culturally-matched providers in Geneva–Lausanne corridors.</p>
+                  </li>
+                  <li class="rounded-2xl bg-gray-50 p-5 shadow-sm">
+                    <h3 class="font-medium">Economic value</h3>
+                    <p class="mt-2 text-gray-600">Corporate wellness for large employers (IT/consulting) and student health partnerships improves productivity and reduces system friction.</p>
+                  </li>
+                  <li class="rounded-2xl bg-gray-50 p-5 shadow-sm">
+                    <h3 class="font-medium">Research & training</h3>
+                    <p class="mt-2 text-gray-600">Creating anonymized evidence datasets for digital oncology/primary care research in collaboration with Swiss academic partners.</p>
+                  </li>
+                </ul>
+              </div>
+            </section>
             <section class="py-20 bg-gray-50">
                 <div class="container mx-auto px-6 text-center">
                     <h2 class="section-title">Our Business Model: Sustainable Growth, Clear Value</h2>
@@ -221,6 +266,18 @@
                 </div>
             </section>
 
+            <section id="updates" class="py-20 bg-white">
+                <div class="container mx-auto px-6 max-w-4xl text-center">
+                    <h2 class="section-title">Our Next Leap: From Paris to Swiss Innovation</h2>
+                    <p class="text-sm text-gray-500 uppercase font-semibold mt-4">Company Update - Oct 2025</p>
+                    <div class="mt-8 text-left prose text-lg max-w-none text-gray-700">
+                        <p>Our journey began with a clear mission: to dismantle healthcare barriers for migrants in Europe. After validating our model, securing key partnerships (including LOIs from the **Ministry of Health Affairs, India** and **Apollo Foundation**), and successfully launching our MVP in Paris, we are thrilled to announce our next strategic leap: **Switzerland**.</p>
+                        <p>Why Switzerland? It represents the pinnacle of healthcare innovation, regulatory excellence, and a thriving, diverse international community. Our expansion, supported by our application to the **Innosuisse** innovation agency, is a natural next step.</p>
+                        <p>We are not just entering a new market; we are integrating into a world-class ecosystem. Our focus will be on aligning our AI-driven platform with Swiss standards (like Swissmedic and data compliance), partnering with academic institutions for research, and providing high-value corporate wellness solutions to the many international organizations and companies in Geneva, Lausanne, and Zürich.</p>
+                        <p>This move from Paris to Switzerland signifies our evolution from a promising pilot to a scalable, pan-European healthcare solution. We are excited to bring IndiSanté's culturally-sensitive care to a new community and contribute to the rich fabric of Swiss innovation.</p>
+                    </div>
+                </div>
+            </section>
             <footer class="bg-gray-800 text-gray-300">
                 <div class="container mx-auto px-6 py-8 text-center">
                     <div class="flex justify-center space-x-6 text-2xl mb-4">
@@ -234,7 +291,6 @@
         </main>
     </div>
 
-    <!-- DEMO MODAL (Hidden by default) -->
     <div id="demo-modal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
         <div class="w-full max-w-md bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200 relative">
             <button id="close-demo-btn" class="absolute top-2 right-4 text-white text-3xl font-bold z-10">&times;</button>
@@ -319,4 +375,3 @@
     </script>
 </body>
 </html>
-
